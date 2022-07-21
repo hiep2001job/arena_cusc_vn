@@ -1,0 +1,122 @@
+:root {
+    --red: #ed2f34;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ola {
+    margin-top: 50px;
+}
+
+.title {
+    color: var(--red);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.process-wrapper {
+    margin: auto;
+    width: 100%;
+}
+
+.process-wrapper #progress-bar-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    margin-top: 59px;
+}
+
+.process-wrapper #progress-bar-container ul {
+    position: absolute;
+    width: 100%;
+    padding-top: 15px;
+    margin-top: -40px;
+    list-style: none;
+    z-index: 99;
+}
+
+.process-wrapper #progress-bar-container ul .step::before {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 2px var(--red);
+    transition: all ease 0.5s;
+    background: var(--white);
+}
+
+.process-wrapper #progress-bar-container ul .step::after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 2px var(--red);
+    margin-top: 40px;
+    box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+    transition: all ease 0.5s;
+    background: var(--white);
+}
+
+.process-wrapper #progress-bar-container ul li.active:before,
+.process-wrapper #progress-bar-container ul li:hover:before {
+    background: var(--red);
+}
+
+.step-inner::before {
+    content: '';
+    color: #348e80;
+    width: 2px;
+    height: 50px;
+    background: #348e80;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    position: absolute;
+    top: -32px;
+    z-index: -1;
+}
+
+.process-wrapper #progress-bar-container ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: aqua;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all ease 0.5s;
+    vertical-align: bottom;
+    height: 59px;
+    position: relative;
+}
+
+.process-wrapper #progress-bar-container ul li .step-inner {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.6rem;
+}
+
+.process-wrapper #progress-bar-container #line {
+    width: 90%;
+    margin: auto;
+    background: var(--red);
+    height: 5px;
+    position: absolute;
+    left: 10%;
+    top: 57px;
+    z-index: 1;
+    border-radius: 50px;
+    transition: all ease-in 0.9s;
+}
