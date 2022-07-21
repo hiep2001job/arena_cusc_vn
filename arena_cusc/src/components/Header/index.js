@@ -37,7 +37,7 @@ const Header = () => {
           </div>
           {/* Website name */}
           <div className="website-name flex-auto max-w-3xl">
-            <div style={shadowStyles} className="outside-custom-border  z-10">
+            <div  className="outside-custom-border  z-10">
               <div className="flex justify-center custom-border px-16 box-border">
                 {/* Arena logo */}
                 <img className="w-auto h-14 mt-2" alt="logo" src={arenaLogo} />

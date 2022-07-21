@@ -18,8 +18,8 @@
   background-color: yellow;
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
   /* box-shadow: 5rem 5rem 5px 2rem #000; */
-  
-
+  /* box-shadow: 0 0 18px black; */
+  box-shadow: 5px 10px #888888;
 }
 
 .custom-border {
