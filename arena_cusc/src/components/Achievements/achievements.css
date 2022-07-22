@@ -9,8 +9,9 @@
     box-sizing: border-box;
 }
 
-.ola {
-    margin-top: 50px;
+section {
+    max-width: 100vw;
+    margin: auto;
 }
 
 .title {
@@ -24,7 +25,41 @@
     width: 100%;
 }
 
-.process-wrapper #progress-bar-container {
+.process-wrapper #top-content ul {
+    display: flex;
+    bottom: -48px;
+    gap: 1.5rem;
+    /* height: 150px; */
+}
+
+.process-wrapper #top-content ul li img {
+    object-fit: cover;
+}
+
+.process-wrapper #top-content ul .brand {
+    /* content: ''; */
+    display: flex;
+    margin: auto;
+    width: 250px;
+    height: 150px;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.process-wrapper #top-content ul .point {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 250px;
+    height: 150px;
+    border-radius: 10%;
+    border: solid 2px var(--red);
+    transition: all ease 0.5s;
+    background: var(--white);
+}
+
+.process-wrapper #progress-bar-container,
+.process-wrapper #top-content {
     position: relative;
     width: 90%;
     margin: auto;
@@ -32,7 +67,8 @@
     margin-top: 59px;
 }
 
-.process-wrapper #progress-bar-container ul {
+.process-wrapper #progress-bar-container ul,
+.process-wrapper #top-content ul {
     position: absolute;
     width: 100%;
     padding-top: 15px;
@@ -50,6 +86,16 @@
     border-radius: 50%;
     border: solid 2px var(--red);
     transition: all ease 0.5s;
+    background: var(--white);
+}
+
+.process-wrapper #progress-bar-container ul .step::before::before {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border: solid 2px var(--red);
     background: var(--white);
 }
 
@@ -86,15 +132,12 @@
     z-index: -1;
 }
 
-.process-wrapper #progress-bar-container ul li {
+.process-wrapper #progress-bar-container ul li,
+.process-wrapper #top-content ul li {
     float: left;
     width: 20%;
     text-align: center;
-    color: aqua;
-    text-transform: uppercase;
-    font-size: 1.5rem;
     cursor: pointer;
-    font-weight: 700;
     transition: all ease 0.5s;
     vertical-align: bottom;
     height: 59px;
@@ -114,9 +157,13 @@
     background: var(--red);
     height: 5px;
     position: absolute;
-    left: 10%;
-    top: 57px;
+    left: 3%;
+    top: 130px;
     z-index: 1;
     border-radius: 50px;
-    transition: all ease-in 0.9s;
+}
+
+.ach-border {
+    height: 250px;
+    width: 150px;
 }
