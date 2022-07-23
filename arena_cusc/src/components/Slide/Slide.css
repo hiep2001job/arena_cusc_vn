@@ -5,9 +5,16 @@
 
 .bg-slide {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
   transition: 2s;
 }
+
 
 .overlay {
   background: #1b1919bf;
@@ -37,9 +44,6 @@
   cursor: pointer;
 }
 
-.slick-slide.slick-active img {
-  z-index: 9;
-}
 
 .slick-slide.slick-active.slick-center.slick-current {
   z-index: 10;
@@ -91,9 +95,6 @@
     margin-top: 25px;
   }
 
-  .bg-slide {
-    background-position-x: center;
-  }
   .slick-dots {
     position: relative;
     margin-bottom: 100px;
