@@ -2,7 +2,7 @@
 // import './App.css';
 // import Header from './components/Header';
 // import Achieverments from './components/Achievements';
-import Achieverments from './components/Achievement2';
+import Achieverments from './components/Achievement2/';
 import './App.css';
 import Header from './components/Header';
 import Banner from './components/Banner';

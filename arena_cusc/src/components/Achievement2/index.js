@@ -18,7 +18,7 @@ const data = [
 function Achievements() {
   return (
     <>
-      <section className="achievement" style={{ margin: 50 }}>
+      <div className="achievement" style={{ margin: 50 }}>
         <Title>NHUNG DIEM NOI BAT CUA ARENA</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />
@@ -26,14 +26,14 @@ function Achievements() {
             <Highlighttem key={`highlight-key-${idx}`} {...val} />
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 }
 
 const BrandItem = () => {
   return (
-    <div style={styles.brand}>
+    <div className='achievement-box brand-img' style={styles.brand}>
       <img src={BrandImg} alt="brand-img" />
     </div>
   );
@@ -43,14 +43,56 @@ const Highlighttem = ({ img, value, title }) => {
   const [width, setWidth] = React.useState(imageSize);
   const ref = React.useRef(null);
   React.useEffect(() => {
-    console.log(ref?.current);
+    // console.log(ref?.current);
     if (ref?.current?.clientWidth) {
       setWidth(ref?.current?.clientWidth / 2);
     }
   }, [ref.current]);
+  var listItems = [];
+  for(let i = 1; i< data.length;i++){
+    <div className='achievement-box ' style={styles.highlight.box} ref={ref}>
+    <div style={styles.highlight.container}>
+      <div
+        className="header"
+        style={{
+          ...styles.highlight.header.container,
+          height: width / 2,
+        }}
+      >
+        <img
+          src={img}
+          alt="highlight-img"
+          style={{
+            ...styles.highlight.header.icon,
+            width: width,
+            height: width,
+          }}
+        />
+      </div>
+      <div
+        className="content circle-center"
+        style={{
+          ...styles.highlight.content.container,
+          paddingTop: width / 2,
+          height: `calc(100% - ${(width + footerHeight) / 2}px)`,
+        }}
+      >
+        <div className='number' style={styles.highlight.content.value}>
+          {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
+        </div>
+        <div className='titile' style={styles.highlight.content.title}>{title?.toUpperCase()}</div>
+      </div>
+      <div className="footer" style={styles.highlight.footer.container}>
+        <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
+        <div className="center-line" style={styles.highlight.footer.centerLine}></div>
+        <div className="circle-bottom" style={styles.highlight.footer.circleBottom}></div>
+      </div>
+    </div>
+  </div>
+  }
   return (
-    <div style={styles.highlight.box} ref={ref}>
-      <div style={styles.highlight.container}>
+     <div className='achievement-box ' style={styles.highlight.box} ref={ref}>
+      <div className='achievement-box-container' style={styles.highlight.container}>
         <div
           className="header"
           style={{
@@ -76,10 +118,10 @@ const Highlighttem = ({ img, value, title }) => {
             height: `calc(100% - ${(width + footerHeight) / 2}px)`,
           }}
         >
-          <div style={styles.highlight.content.value}>
+          <div className='number' style={styles.highlight.content.value}>
             {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
           </div>
-          <div style={styles.highlight.content.title}>{title?.toUpperCase()}</div>
+          <div className='titile' style={styles.highlight.content.title}>{title?.toUpperCase()}</div>
         </div>
         <div className="footer" style={styles.highlight.footer.container}>
           <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
@@ -111,7 +153,7 @@ const styles = {
   highlight: {
     box: {
       width: '20%',
-      paddingLeft: 5,
+      paddingLeft: 20,
     },
     container: {
       display: 'flex',
@@ -142,13 +184,14 @@ const styles = {
         flexDirection: 'column',
         width: '100%',
         height: `calc(100% - ${(imageSize + footerHeight) / 2}px)`,
-        borderWidth: 3,
-        borderColor: 'lightgray',
+        borderWidth: 2,
+        borderColor: '#fff212',
         borderRadius: 10,
         paddingTop: imageSize / 2 + 10,
         paddingBottom: circleTopSize / 2 + 5,
         paddingLeft: 15,
         paddingRight: 15,
+        boxShadow: '0px 0px 10px #adb5bd',
       },
       value: {
         fontSize: '2.8rem',
