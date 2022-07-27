@@ -134,45 +134,44 @@ const Header = () => {
           </div>
         </div>
         {/* navbar section */}
-                {/* Overlay when mobile menu displayed */}
+        {/* Overlay when mobile menu displayed */}
 
         <div className="navbar-wrapper w-full">
           <ul
             className={classNames(
               isMobile ? 'menu' : 'md-menu transform-none',
-              minimal ? 'navbar-list-minimal' : '',
-              !open && isMobile ? '-translate-x-[100%]' : '',
+              isMobile && minimal ? '' : 'navbar-list-minimal',
+              isMobile && !open ? '-translate-x-[100%]' : '',
             )}
           >
             {/* Mobile display logos */}
             {isMobile && open && (
               <>
-              
-              <div className=" flex justify-items-start h-20">
-                <div className="mx-2 grow-0 ">
-                  <img alt="logo" className=" logo-section-img" src={dhctLogo} />
+                <div className=" flex justify-items-start h-20">
+                  <div className="mx-2 grow-0 ">
+                    <img alt="logo" className=" logo-section-img" src={dhctLogo} />
+                  </div>
+                  <div className="mx-2 grow-0">
+                    <img alt="logo" className=" logo-section-img" src={cuscLogo} />
+                  </div>
+                  <div className="mx-2 grow-0  md:hidden">
+                    <img alt="logo" className=" logo-section-img" src={arenaLogo} />
+                  </div>
+                  <div className="mx-2 grow-0 ">
+                    <img alt="logo" className=" logo-section-img" src={aptechLogo} />
+                  </div>
                 </div>
-                <div className="mx-2 grow-0">
-                  <img alt="logo" className=" logo-section-img" src={cuscLogo} />
-                </div>
-                <div className="mx-2 grow-0  md:hidden">
-                  <img alt="logo" className=" logo-section-img" src={arenaLogo} />
-                </div>
-                <div className="mx-2 grow-0 ">
-                  <img alt="logo" className=" logo-section-img" src={aptechLogo} />
-                </div>
-              </div>
               </>
             )}
+            <hr className='menu-separator'/>
             {/* Menu items */}
             {menuItems.map((item, index) => (
               <li key={index} onClick={() => setActiveMenuItem(item.link)}>
                 <div
                   className={classNames(
-                    item.link === activeMenuItem ? 'md-menu-item-active' : '',
-                    'md-menu-item',
-                    minimal ? 'md-menu-item-minimal' : '',
-                    isMobile ? 'menu-item-active' : '',
+                    isMobile && item.link === activeMenuItem ? 'menu-item-active' : 'md-menu-item-active',
+                    isMobile ? '' : 'md-menu-item',
+                    isMobile && minimal ? '' : 'md-menu-item-minimal',
                   )}
                 >
                   {item.name}
@@ -181,7 +180,7 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        {isMobile && open && <div className='header-overlay'></div>}
+        {isMobile && open && <div className="header-overlay"></div>}
       </div>
     </header>
   );
