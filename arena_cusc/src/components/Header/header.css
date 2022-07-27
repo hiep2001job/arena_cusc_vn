@@ -1,44 +1,65 @@
-/* @layer {
-  .nav-item {
-    @apply w-24 font-bold bg-transparent text-center;
-  }
-  .nav-item:hover {
-    @apply w-24 font-bold border-yellow-500 border-2 border-radius-2 rounded bg-transparent text-center;
-  }
-} */
-.website-name{
-  transform:translate(0,2.5rem);
+/* Logo section */
+.header-section {
+  @apply flex h-24 justify-between bg-transparent;
 }
+
+.logo-section-wrapper {
+  @apply mt-5 z-10 pl-2;
+}
+
+.logo-section-img {
+  @apply h-auto max-h-11;
+}
+
+/* Website name section */
+.websitename-section {
+  @apply lg:h-20  w-auto z-10;
+}
+
 .outside-custom-border {
-  position: relative;
-  padding: 0;
-  height: 5rem;
-  width:inherit;
+  @apply relative p-0 h-20 bg-[yellow] mx-auto z-10  lg:h-20;
+}
+
+.outside-custom-border {
+  width: inherit;
   transform: translate(0, 2px);
-  background-color: yellow;
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-  /* box-shadow: 5rem 5rem 5px 2rem #000; */
-  /* box-shadow: 0 0 18px black; */
   box-shadow: 5px 10px #888888;
 }
 
 .custom-border {
-  height: 5rem;  
-  width: inherit;  
-  background-color: white;
+  @apply flex justify-center h-20 bg-white  w-full box-border pt-14 md:px-16  md:py-2;
+}
+
+.custom-border {
+  width: inherit;
   transform: translate(0, -3px);
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-  
 }
 
 .behind-block {
-  max-width:35rem;
-  height:5rem;
-  background-color: yellow;
-  position: relative;
-  transform: translate(0, -3.5rem);
-  margin: auto auto;
+  @apply relative w-[70%] h-20 bg-[yellow] mx-auto z-0;
+}
+
+.behind-block {
+  transform: translate(0, -4rem);
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
 }
 
+.websitename-text-wrapper {
+  @apply md:grow-[3] lg:grow-[4] text-center text-[0.6rem] lg:text-xs xl:text-base uppercase min-w-fit;
+}
+
+/* search box */
+.searchbox-section {
+  @apply grow-[2] px-5 z-10 w-auto;
+}
+
+.searchbox-wrapper {
+  @apply border-2 rounded-3xl h-12 border-gray-400 w-auto mt-5 flex  pl-5 pr-3 py-1;
+}
+
+.searchbox-inp {
+  @apply border-b-2 border-gray-400  w-full outline-none leading-3 text-[0.6rem] lg:text-xs xl:text-base;
+}
 

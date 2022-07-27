@@ -11,7 +11,9 @@ function App() {
     <>
       <Header/>
       <Banner/>      
-      <Slide />
+      <Slide />      
+      <Slide />      
+      
     </>
   );
 }
