@@ -13,17 +13,17 @@ const Banner = () => {
         <img alt="banner" className="w-full" src={bannerImg} />
       </div>
       {/* Banners */}
-      <div className="right-[10vw] top-0 w-5/12 md:right-[8vw] md:top-20 md:w-3/12 absolute flex flex-col  ">
+      <div className="right-[10vw] -top-4 w-4/12 md:right-[8vw] md:top-20 md:w-3/12 absolute flex flex-col  ">
         {/* Slogan banner */}
-        <div className="grow hover-grow-up">
+        <div className="grow hover-grow-up w-auto">
           <img alt="slogan banner" src={sloganImg} />
         </div>
         {/* Register banner */}
-        <div className="grow mt-10">
-          <div className="regis-wrapper min-h-fit min-w-fit">
-            <div className="regis-header sm:text-[0.6rem] md:text-base">Đăng kí xét tuyển</div>
+        <div className=" grow-0 mt-10 w-auto">
+          <div className="regis-wrapper min-w-fit">
+            <div className="regis-header ">Đăng kí xét tuyển</div>
             <div className="regis-body text-center ">
-              <span className="font-bold sm:text-[0.6rem] md:text-base "> Ưu tiên nộp hồ sơ sớm!</span><br/>
+              <span className="font-bold "> Ưu tiên nộp hồ sơ sớm!</span><br/>
               <button className='regis-btn'>Đăng ký</button>
             </div>
           </div>

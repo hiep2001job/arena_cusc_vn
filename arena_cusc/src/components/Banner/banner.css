@@ -8,25 +8,31 @@
 }
 
 /* Regis banner */
+.regis-wrapper{
+  @apply 
+  text-[0.6rem] pb-2 
+  sm:text-base  md:pb-5;
+}
 .regis-wrapper {
   position: relative;
   border: 3px solid #ed3237;
   border-radius: 15px;
   min-width: fit-content;
   background-color: white;
-  overflow: visible;
-  padding-bottom: 2rem;
+  overflow: visible;  
   box-shadow: 0 0 0 10px hsl(0deg 0% 100% / 80%), 0 0 0 25px hsl(0deg 0% 100% / 50%), 0 0 0 40px hsl(0deg 0% 100% / 20%);
   transition: all 0.2s ease-in-out;
 }
 .regis-wrapper:hover {
     box-shadow: 0 0 0 15px hsl(0deg 0% 100% / 80%), 0 0 0 30px hsl(0deg 0% 100% / 50%), 0 0 0 60px hsl(0deg 0% 100% / 20%);
 }
+.regis-header{
+  @apply h-10 sm:h-16 md:h-20
+}
 .regis-header {
   position: relative;
   text-align: center;
-  text-transform: uppercase;
-  height: 10vh;
+  text-transform: uppercase;  
   display: grid;
   place-items: center;
   border: 3px solid #ed3237;
@@ -42,9 +48,13 @@
   font-weight: bold;
 }
 .regis-body {
+  @apply pt-1
+}
+.regis-body {
   position: relative;
-  padding-top: 1rem;
+  
 }
 .regis-btn {
-  @apply mt-5 py-3 px-10 bg-[#ed3237] text-white font-bold  uppercase rounded-full hover:shadow-[0_0_15px_#ed3238d4];
+  @apply md:mt-5 py-1 px-3 bg-[#ed3237] text-white font-bold  uppercase rounded-full hover:shadow-[0_0_15px_#ed3238d4]
+        mt-3 ;
 }
