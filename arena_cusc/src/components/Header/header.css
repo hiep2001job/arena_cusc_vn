@@ -1,30 +1,35 @@
 /* Logo section */
 .header-section {
-  @apply flex h-24 justify-between bg-transparent;
+  @apply flex  justify-between bg-transparent;
 }
+.header
 
 .logo-section-wrapper {
   @apply mt-5 z-10 pl-2;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 .logo-section-img {
-  @apply h-auto max-h-11;
+  @apply h-auto max-h-11 w-auto;
 }
 
 /* Website name section */
 .websitename-section {
-  @apply lg:h-20  w-auto z-10;
+  @apply lg:h-24   z-10;
+  filter: drop-shadow(0px 6px 3px rgba(50, 50, 0, 0.5));
 }
+.websitename-section-minimal{
+  filter: drop-shadow(0px 6px 3px rgba(50, 50, 0, 0.5));
+}
+/* Websitename section on minimal state */
 
 .outside-custom-border {
   @apply relative p-0 h-20 bg-[yellow] mx-auto z-10  lg:h-20;
 }
 
 .outside-custom-border {
-  width: inherit;
-  transform: translate(0, 2px);
+  width: inherit; 
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-  box-shadow: 5px 10px #888888;
 }
 
 .custom-border {
@@ -38,11 +43,11 @@
 }
 
 .behind-block {
-  @apply relative w-[70%] h-20 bg-[yellow] mx-auto z-0;
+  @apply absolute w-[40%] left-[30%] h-24 bg-[yellow] mx-auto z-0;
 }
 
 .behind-block {
-  transform: translate(0, -4rem);
+ 
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
 }
 

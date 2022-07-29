@@ -10,10 +10,8 @@ function App() {
   return (
     <>
       <Header/>
-      <Banner/>      
-      <Slide />      
-      <Slide />      
-      
+      <div className='h-[100rem] w-full bg-gray-50 block top-0'></div>     
+
     </>
   );
 }
