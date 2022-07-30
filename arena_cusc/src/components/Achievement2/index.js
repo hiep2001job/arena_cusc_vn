@@ -48,51 +48,10 @@ const Highlighttem = ({ img, value, title }) => {
       setWidth(ref?.current?.clientWidth / 2);
     }
   }, [ref.current]);
-  var listItems = [];
-  for(let i = 1; i< data.length;i++){
-    <div className='achievement-box ' style={styles.highlight.box} ref={ref}>
-    <div style={styles.highlight.container}>
-      <div
-        className="header"
-        style={{
-          ...styles.highlight.header.container,
-          height: width / 2,
-        }}
-      >
-        <img
-          src={img}
-          alt="highlight-img"
-          style={{
-            ...styles.highlight.header.icon,
-            width: width,
-            height: width,
-          }}
-        />
-      </div>
-      <div
-        className="content circle-center"
-        style={{
-          ...styles.highlight.content.container,
-          paddingTop: width / 2,
-          height: `calc(100% - ${(width + footerHeight) / 2}px)`,
-        }}
-      >
-        <div className='number' style={styles.highlight.content.value}>
-          {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
-        </div>
-        <div className='titile' style={styles.highlight.content.title}>{title?.toUpperCase()}</div>
-      </div>
-      <div className="footer" style={styles.highlight.footer.container}>
-        <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
-        <div className="center-line" style={styles.highlight.footer.centerLine}></div>
-        <div className="circle-bottom" style={styles.highlight.footer.circleBottom}></div>
-      </div>
-    </div>
-  </div>
-  }
+
   return (
      <div className='achievement-box ' style={styles.highlight.box} ref={ref}>
-      <div className='achievement-box-container' style={styles.highlight.container}>
+      <div className='achievement-box-container' style={styles.highlight.container} ref={ref}>
         <div
           className="header"
           style={{
@@ -135,7 +94,7 @@ const Highlighttem = ({ img, value, title }) => {
 
 const imageSize = 120;
 const circleTopSize = 40;
-const circleBottomSize = 20;
+const circleBottomSize = 25;
 const footerHeight = 60;
 
 const styles = {
