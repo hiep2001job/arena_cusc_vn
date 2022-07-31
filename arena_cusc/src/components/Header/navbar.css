@@ -174,7 +174,7 @@
   @apply md:z-20 
     md:flex 
     md:justify-between 
-    mt-3
+    mt-6
     md:mx-auto 
     md:min-w-fit 
     md:max-w-[70%];

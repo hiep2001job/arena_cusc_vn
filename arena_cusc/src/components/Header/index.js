@@ -43,7 +43,7 @@ const Header = () => {
   const [minimal, setMinimal] = useState(false);
 
   const minimalControler = () => {
-    setMinimal(window.scrollY > 100);
+    setMinimal(window.scrollY > window.innerHeight);
   };
 
   useEffect(() => {
@@ -61,10 +61,16 @@ const Header = () => {
     <header className={classNames('z-30 w-screen', onMinimal ? 'fixed bg-white ' : 'relative')}>
       <div className="w-full">
         {/* main section */}
-        <div className={classNames('header-section')}>
+        <div
+          className={classNames(
+            'header-section md:px-5',
+            !isMobile && minimal && 'lg:max-w-[85%] mx-auto',
+            
+          )}
+        >
           {/* logo section on minimal state */}
-          {minimal && (
-            <div className="grow flex justify-between">
+          {!isMobile&&minimal && (
+            <div className="grow flex justify-center items-center">
               <div className="grow">
                 <img className="h-auto max-h-8" alt="logo" src={dhctLogo} />
               </div>
@@ -80,7 +86,7 @@ const Header = () => {
           <div
             className={classNames(
               'logo-section-wrapper mt-5 grow-[2] flex justify-items-start sm:w-full md:w-auto  sm:justify-center md:static md:justify-between z-[52]',
-              minimal && 'hidden',
+              !isMobile&&minimal && 'hidden',
               isMobile && open ? 'hidden' : '',
             )}
           >
@@ -100,7 +106,7 @@ const Header = () => {
           {/* Website name section on minimal state */}
           {!isMobile && minimal && (
             <div className="grow websitename-section-minimal">
-              <div className="w-fit flex justify-center rounded-lg px-10 py-2  bg-[yellow]">
+              <div className="mx-auto w-fit flex justify-center rounded-lg px-10 py-2  bg-[yellow]">
                 {/* Arena logo */}
                 <div className="grow min-w-fit ">
                   <img className="h-8 w-auto mx-auto " alt="logo" src={arenaLogo} />
@@ -118,35 +124,35 @@ const Header = () => {
               </div>
             </div>
           )}
-
-          {/* Website name section */}
-          <div className={classNames('websitename-section hidden', minimal ? 'hidden' : 'md:block')}>
-            <div className="outside-custom-border ">
-              <div className="custom-border ">
-                {/* Arena logo */}
-                <div className="grow min-w-fit">
-                  <img className="h-6 md:h-10 w-auto lg:h-14 float-right" alt="logo" src={arenaLogo} />
-                </div>
-                {/* Text */}
-                <div className="websitename-text-wrapper">
-                  <span className=" text-[#00275a] w-fit">Trung tâm công nghệ phần mềm đại học cần thơ</span>
-                  <br />
-                  <span className=" text-[#00275a] font-bold w-fit">
-                    Trung tâm đào tạo mỹ thuật đa phương tiện quốc tế
-                  </span>
-                  <br />
-                  <span className="font-bold text-red-600 w-fit">Arena multimedia</span>
+          <div className={classNames('grow-[3] relative', minimal ? 'hidden' : 'md:block')}>
+            {/* Website name section */}
+            <div className={classNames('websitename-section hidden md:block')}>
+              <div className="outside-custom-border">
+                <div className="custom-border ">
+                  {/* Arena logo */}
+                  <div className="grow min-w-fit">
+                    <img className="h-6 md:h-10 w-auto lg:h-14 float-right" alt="logo" src={arenaLogo} />
+                  </div>
+                  {/* Text */}
+                  <div className="websitename-text-wrapper">
+                    <span className=" text-[#00275a] w-fit">Trung tâm công nghệ phần mềm đại học cần thơ</span>
+                    <br />
+                    <span className=" text-[#00275a] font-bold w-fit">
+                      Trung tâm đào tạo mỹ thuật đa phương tiện quốc tế
+                    </span>
+                    <br />
+                    <span className="font-bold text-red-600 w-fit">Arena multimedia</span>
+                  </div>
                 </div>
               </div>
             </div>
+            {/* Block behind of website name section */}
+            <div className={classNames('behind-block ', isMobile || minimal ? 'hidden' : '')}></div>
           </div>
 
-          {/* Block behind of website name section */}
-          <div className={classNames('behind-block ', isMobile || minimal ? 'hidden' : '')}></div>
-
           {/* Buger Icon for mobile menu toggle */}
-          <div className="grow-[1]  top-0 right-0 z-[50] md:hidden">
-            <div id="menuToggle" className="my-auto float-right pr-5">
+          <div className="grow-[1]  top-[0] right-0 z-[50] md:hidden ">
+            <div id="menuToggle" className="my-auto  float-right pr-5">
               <input
                 type="checkbox"
                 checked={open}
@@ -160,13 +166,13 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Search box hidden on small screen*/}
-          <div className={classNames('searchbox-section', minimal ? 'hidden' : 'hidden md:block')}>
-            <div className="searchbox-wrapper">
-              <input className="searchbox-inp" placeholder="Tìm kiếm" />
+          {/* Search box*/}
+          <div className={classNames('searchbox-section grow-[2]', minimal ? 'hidden' : 'hidden md:block')}>
+            <div className="searchbox-wrapper ">
+              <input className="searchbox-inp" placeholder="Tìm kiếm thông tin" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 cursor-pointer -translate-y-1"
+                className="h-11 w-11 cursor-pointer -translate-y-2"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -181,20 +187,19 @@ const Header = () => {
           </div>
 
           {/* Register button on minimal state */}
-          <div className={classNames(!isMobile && minimal ? 'grow' : 'hidden')}>
-            <button>register</button>
+          <div className={classNames(!isMobile && minimal ? 'grow flex items-center justify-center' : 'hidden')}>
+            <button className='header-register-btn'>Đăng ký</button>
           </div>
         </div>
 
         {/* navbar section */}
         {/* Overlay when mobile menu displayed */}
-
-        <div className={classNames('w-full mt-6 md:mt3', minimal && !isMobile ? 'navbar-wrapper-minimal' : '')}>
+        <div className={classNames('w-full ', minimal && !isMobile ? 'navbar-wrapper-minimal' : '')}>
           <ul
             className={classNames(
               isMobile ? 'menu' : 'transform-none',
               !isMobile && minimal ? 'navbar-list-minimal ' : '',
-              !isMobile && !minimal && 'md-menu',
+              !isMobile && !minimal && 'md-menu mt-6 md:mt-3',
               isMobile && open ? 'transform-none' : '-translate-x-[100%]',
             )}
           >

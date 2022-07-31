@@ -1,6 +1,7 @@
 /* Logo section */
 .header-section {
-  @apply flex  justify-between bg-transparent;
+  @apply flex  justify-between  bg-transparent;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 .header
 
@@ -18,11 +19,17 @@
   @apply lg:h-24   z-10;
   filter: drop-shadow(0px 6px 3px rgba(50, 50, 0, 0.5));
 }
+
 .websitename-section-minimal{
+  @apply grow;
   filter: drop-shadow(0px 6px 3px rgba(50, 50, 0, 0.5));
 }
 /* Websitename section on minimal state */
-
+.header-register-btn{
+  @apply bg-[#ed3237] text-white font-bold  
+          uppercase rounded-full hover:shadow-[0_0_15px_#ed3238d4]
+          px-5
+}
 .outside-custom-border {
   @apply relative p-0 h-20 bg-[yellow] mx-auto z-10  lg:h-20;
 }
@@ -43,11 +50,15 @@
 }
 
 .behind-block {
-  @apply absolute w-[40%] left-[30%] h-24 bg-[yellow] mx-auto z-0;
+  @apply absolute w-[70%] top-0 left-[15%] h-24 bg-[yellow]  z-[-1];
+  /* left: 0; 
+  right: 0; 
+  top:0;
+  margin-left: auto; 
+  margin-right: auto;  */
 }
 
-.behind-block {
- 
+.behind-block { 
   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
 }
 
@@ -57,11 +68,11 @@
 
 /* search box */
 .searchbox-section {
-  @apply grow-[2] px-5 z-10 w-auto;
+  @apply  z-10 ;
 }
 
 .searchbox-wrapper {
-  @apply border-2 rounded-3xl h-12 border-gray-400 w-auto mt-5 flex  pl-5 pr-3 py-1;
+  @apply border-2 rounded-3xl h-12 border-gray-400  mx-auto mt-5 flex  pl-5 pr-2 py-2;
 }
 
 .searchbox-inp {
