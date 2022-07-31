@@ -1,7 +1,7 @@
 function Button({ children, className, type }) {
-  let btnStyle = 'py-3 px-8';
+  let btnStyle = 'py-3 px-10';
   {
-    type === 'sm' && (btnStyle = 'px-6');
+    type === 'sm' && (btnStyle = 'px-10');
   }
 
   return (

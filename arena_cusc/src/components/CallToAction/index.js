@@ -7,7 +7,7 @@ function CallToAction() {
   return (
     <>
       <div
-        className="relative w-full h-[550px] mt-[-100px] bg-callToAction"
+        className="relative w-full h-[550px] mb-20 mt-[-100px] bg-callToAction"
         style={{ backgroundImage: `url(${personBackground})` }}
       >
         <div className="absolute w-full mt-52 text-center">

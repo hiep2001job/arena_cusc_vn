@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'primary-color': 'var(--primary-color)',
       },
+      backgroundPosition: {
+        'background-position--35': '-35px',
+      },
     },
     screens: {
       'sm': '640px',
