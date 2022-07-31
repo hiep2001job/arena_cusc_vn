@@ -54,11 +54,11 @@ const Header = () => {
   }, []);
 
   // Screen state query
-  const onMinimal = () => !isMobile && minimal;
+
   const onMobile = () => isMobile;
 
   return (
-    <header className={classNames('z-30 w-screen', onMinimal ? 'fixed bg-white ' : 'relative')}>
+    <header className={classNames('z-30 w-screen',  minimal ? "fixed  bg-white" : "relative bg-transparent")}>
       <div className="w-full">
         {/* main section */}
         <div
@@ -85,7 +85,7 @@ const Header = () => {
           {/* logo  section*/}
           <div
             className={classNames(
-              'logo-section-wrapper mt-5 grow-[2] flex justify-items-start sm:w-full md:w-auto  sm:justify-center md:static md:justify-between z-[52]',
+              'logo-section-wrapper mt-5 grow-[2] flex justify-items-start items-center sm:w-full md:w-auto  sm:justify-center md:static md:justify-between z-[52]',
               !isMobile&&minimal && 'hidden',
               isMobile && open ? 'hidden' : '',
             )}
@@ -194,7 +194,7 @@ const Header = () => {
 
         {/* navbar section */}
         {/* Overlay when mobile menu displayed */}
-        <div className={classNames('w-full ', minimal && !isMobile ? 'navbar-wrapper-minimal' : '')}>
+        <div className={classNames('w-full', minimal && !isMobile ? 'navbar-wrapper-minimal' : '')}>
           <ul
             className={classNames(
               isMobile ? 'menu' : 'transform-none',
@@ -232,8 +232,9 @@ const Header = () => {
                     isMobile && item.link === activeMenuItem && 'menu-item-active', //mobile
                     !isMobile && minimal && 'minimal-menu-item', //minimal
                     !isMobile && minimal && item.link === activeMenuItem && 'minimal-menu-item-active', //minimal
-                    !isMobile && !minimal && 'md-menu-item', //normal
-                    !isMobile && !minimal && item.link === activeMenuItem && 'md-menu-item-active', //normal
+                    // !isMobile && !minimal && '', //normal
+                    !isMobile && !minimal && item.link === activeMenuItem ? 'md-menu-item-active':"md-menu-item", //normal
+                    !isMobile && !minimal && !item.link === activeMenuItem && 'md-menu-item',
                   )}
                 >
                   {item.name}

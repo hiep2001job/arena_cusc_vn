@@ -9,11 +9,13 @@ const Banner = () => {
   return (
     <div className="w-screen relative">
       {/* Background image */}
-      <div className="z-50 w-screen -translate-y-[5rem]">
+      <div className="w-full md:-translate-y-32">
         <img alt="banner" className="w-full" src={bannerImg} />
       </div>
       {/* Banners */}
-      <div className="right-[10vw] -top-4 w-4/12 md:right-[8vw] md:top-20 md:w-3/12 absolute flex flex-col  ">
+      <div className="right-[10vw] top-4 w-4/12 md:right-[8vw] md:top-8 
+      md:w-3/12 absolute 
+      flex flex-col  ">
         {/* Slogan banner */}
         <div className="grow hover-grow-up w-auto">
           <img alt="slogan banner" src={sloganImg} />

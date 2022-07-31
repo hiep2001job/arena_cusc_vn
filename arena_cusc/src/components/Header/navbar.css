@@ -136,7 +136,7 @@
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
+  /* transform-origin: 0% 0%; */
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   display: flex;
   flex-direction: column;
@@ -177,7 +177,7 @@
     mt-6
     md:mx-auto 
     md:min-w-fit 
-    md:max-w-[70%];
+    md:max-w-[65%];
 }
 
 .md-menu-item-active {

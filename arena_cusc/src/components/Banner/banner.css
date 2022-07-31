@@ -27,7 +27,7 @@
     box-shadow: 0 0 0 15px hsl(0deg 0% 100% / 80%), 0 0 0 30px hsl(0deg 0% 100% / 50%), 0 0 0 60px hsl(0deg 0% 100% / 20%);
 }
 .regis-header{
-  @apply h-10 sm:h-16 md:h-20
+  @apply py-2
 }
 .regis-header {
   position: relative;
