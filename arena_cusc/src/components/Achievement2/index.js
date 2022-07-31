@@ -18,7 +18,7 @@ function Achievements() {
   return (
     <>
       <div className="achievement" style={{ margin: 50 }}>
-        <Title>những điểm nổi bật của arena</Title>
+        <Title className="text-center text-primary-color">những điểm nổi bật của arena</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />
           {data.map((val, idx) => (

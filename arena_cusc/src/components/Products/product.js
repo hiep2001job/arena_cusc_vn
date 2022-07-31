@@ -35,6 +35,12 @@ const data = [
         subTitle: '',
         time: '2021-2022',
       },
+      {
+        img: testImg_1,
+        title: 'co van quan1234',
+        subTitle: '',
+        time: '2021-2022',
+      },
     ],
   },
   {
