@@ -58,18 +58,12 @@ const Header = () => {
   const onMobile = () => isMobile;
 
   return (
-    <header className={classNames('z-30 w-screen',  minimal ? "fixed  bg-white" : "relative bg-transparent")}>
+    <header className={classNames('z-30 w-screen', minimal ? 'fixed  bg-white' : 'relative bg-transparent')}>
       <div className="w-full">
         {/* main section */}
-        <div
-          className={classNames(
-            'header-section md:px-5',
-            !isMobile && minimal && 'lg:max-w-[85%] mx-auto',
-            
-          )}
-        >
+        <div className={classNames('header-section md:px-5', !isMobile && minimal && 'lg:max-w-[85%] mx-auto')}>
           {/* logo section on minimal state */}
-          {!isMobile&&minimal && (
+          {!isMobile && minimal && (
             <div className="grow flex justify-center items-center">
               <div className="grow">
                 <img className="h-auto max-h-8" alt="logo" src={dhctLogo} />
@@ -85,9 +79,12 @@ const Header = () => {
           {/* logo  section*/}
           <div
             className={classNames(
-              'logo-section-wrapper mt-5 grow-[2] flex justify-items-start items-center sm:w-full md:w-auto  sm:justify-center md:static md:justify-between z-[52]',
-              !isMobile&&minimal && 'hidden',
-              isMobile && open ? 'hidden' : '',
+              `logo-section-wrapper mt-5 grow-[2] 
+              pb-5 flex justify-items-start 
+              items-center sm:w-full md:w-auto  
+              sm:justify-center md:static md:justify-between z-[52]`,
+              !isMobile && minimal && 'hidden',
+              isMobile && open && 'invisible',
             )}
           >
             <div className="mx-2 grow-0 md:grow">
@@ -188,7 +185,7 @@ const Header = () => {
 
           {/* Register button on minimal state */}
           <div className={classNames(!isMobile && minimal ? 'grow flex items-center justify-center' : 'hidden')}>
-            <button className='header-register-btn'>Đăng ký</button>
+            <button className="header-register-btn">Đăng ký</button>
           </div>
         </div>
 
@@ -230,11 +227,10 @@ const Header = () => {
                 <div
                   className={classNames(
                     isMobile && item.link === activeMenuItem && 'menu-item-active', //mobile
-                    !isMobile && minimal && 'minimal-menu-item', //minimal
-                    !isMobile && minimal && item.link === activeMenuItem && 'minimal-menu-item-active', //minimal
-                    // !isMobile && !minimal && '', //normal
-                    !isMobile && !minimal && item.link === activeMenuItem ? 'md-menu-item-active':"md-menu-item", //normal
-                    !isMobile && !minimal && !item.link === activeMenuItem && 'md-menu-item',
+                    !isMobile &&
+                      minimal &&
+                      (item.link === activeMenuItem ? 'minimal-menu-item-active' : 'minimal-menu-item'),//minimal
+                    !isMobile && !minimal && (item.link === activeMenuItem ? 'md-menu-item-active' : 'md-menu-item'), //normal
                   )}
                 >
                   {item.name}

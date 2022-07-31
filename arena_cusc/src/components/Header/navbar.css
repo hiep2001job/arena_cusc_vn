@@ -137,7 +137,8 @@
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
   /* transform-origin: 0% 0%; */
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  /* transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); */
+  transition: all 0.8s ease-in-out;
   display: flex;
   flex-direction: column;
 }
