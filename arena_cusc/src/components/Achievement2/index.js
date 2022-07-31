@@ -1,12 +1,11 @@
 import React from 'react';
 import './style.css';
+import Title from '../../components/shared/Title';
 import BrandImg from '../../assets/images/No1_Brand.png';
 import Icon_1 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-1.png';
 import Icon_2 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-2.png';
 import Icon_3 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-3.png';
 import Icon_4 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-4.png';
-
-import Title from './Title';
 
 const data = [
   { img: Icon_1, value: 25, title: 'năm kinh nghiệm' },
@@ -19,7 +18,7 @@ function Achievements() {
   return (
     <>
       <div className="achievement" style={{ margin: 50 }}>
-        <Title>NHUNG DIEM NOI BAT CUA ARENA</Title>
+        <Title>những điểm nổi bật của arena</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />
           {data.map((val, idx) => (
