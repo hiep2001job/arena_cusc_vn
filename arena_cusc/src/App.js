@@ -16,9 +16,8 @@ function App() {
       <Banner />
       <Slide />
       <CallToAction />
-      <GoodStudentExamples />
-
-      {/* <Curriculum /> */}
+      <GoodStudentExamples />  
+  
     </>
   );
 }
