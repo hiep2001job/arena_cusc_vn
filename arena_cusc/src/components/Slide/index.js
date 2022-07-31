@@ -8,7 +8,7 @@ import spiderman from '../../assets/images/slide/spider-man.jpg';
 import doctorStrange from '../../assets/images/slide/doctor-strange.jpg';
 import squidGame from '../../assets/images/slide/squildGame.png';
 import milion from '../../assets/images/slide/minion.jpg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Description from '../shared/Description';
 
 function Slide() {
@@ -27,35 +27,16 @@ function Slide() {
     arrows: false,
     speed: 1000,
     beforeChange: (current, next) => setCurrentImage(next),
+    customPaging: () => <div className="customPaging"></div>,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          // slidesToShow: 3,
-          // slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 640,
+        breakpoint: 768,
         settings: {
           dots: true,
           centerMode: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
-          arrows: true,
-          swipe: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          dots: true,
-          centerMode: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          arrows: true,
           swipe: true,
         },
       },
@@ -83,7 +64,7 @@ function Slide() {
               phẩm tuyệt vời nảy chưa?
             </Description>
           </div>
-          <Slider {...settings}>
+          <Slider {...settings} className="mt-5 md:mt-0">
             <div className="img-slide">
               <img src={spiderman} alt="1" />
             </div>
