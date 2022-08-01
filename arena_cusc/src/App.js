@@ -8,6 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Curriculum from './components/Curriculum';
 import GoodStudentExamples from './components/GoodStudentExamples';
+import Instructors from './components/Instructors';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Banner />
       <Slide />
       <CallToAction />
+      <Instructors/>
       <GoodStudentExamples />  
   
     </>

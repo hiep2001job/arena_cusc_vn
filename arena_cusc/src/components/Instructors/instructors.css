@@ -1,0 +1,4 @@
+.instr-img{
+    @apply mx-auto rounded-none z-10 border-2 border-[#fdf34e] scale-[0.9] hover:scale-[1];
+    transition: all 0.5s ease-out;
+}
