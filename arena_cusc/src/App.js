@@ -19,7 +19,6 @@ function App() {
         <GoodStudentExamples />
 
         <Curriculum />
-        <h1 className="bg-red-600">ok</h1>
       </div>
     </>
   );

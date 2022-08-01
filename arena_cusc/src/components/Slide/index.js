@@ -66,16 +66,16 @@ function Slide() {
           </div>
           <Slider {...settings} className="mt-5 md:mt-0">
             <div className="img-slide">
-              <img src={spiderman} alt="1" />
+              <img className="rounded-3xl" src={spiderman} alt="1" />
             </div>
             <div className="img-slide">
-              <img src={doctorStrange} alt="2" />
+              <img className="rounded-3xl" src={doctorStrange} alt="2" />
             </div>
             <div className="img-slide">
-              <img src={squidGame} alt="3" />
+              <img className="rounded-3xl" src={squidGame} alt="3" />
             </div>
             <div className="img-slide">
-              <img src={milion} alt="4" />
+              <img className="rounded-3xl" src={milion} alt="4" />
             </div>
           </Slider>
         </div>
