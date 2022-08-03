@@ -19,7 +19,7 @@
   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--eerie-black)); */
 }
 
-.overlay {
+.overlay-slide {
   background: #1b1919bf;
   position: absolute;
   top: 0;

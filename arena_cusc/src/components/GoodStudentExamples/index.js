@@ -9,8 +9,9 @@ import '../shared/StyleGlobal/StyleGlobal.css';
 import Description from '../shared/Description';
 import Title from '../shared/Title';
 
-import image1 from '../../assets/images/GoodStudentExamples/Untitled-1.png';
-import image2 from '../../assets/images/GoodStudentExamples/Untitled-2.png';
+import image1 from '../../assets/images/goodStudentExamples/Untitled-1.png';
+import image2 from '../../assets/images/goodStudentExamples/Untitled-2.png';
+import CustomPaging from '../shared/CustomPaging';
 
 const goodStudents = [
   {
@@ -40,7 +41,7 @@ function GoodStudentExamples() {
     swipe: true,
     arrows: true,
     dots: true,
-    customPaging: () => <div className="customPaging"></div>,
+    customPaging: () => <CustomPaging />,
     nextArrow: <SlickArrow left />,
     prevArrow: <SlickArrow right />,
     responsive: [
@@ -68,7 +69,7 @@ function GoodStudentExamples() {
             <div className="grid grid-cols-2 gap-2">
               <div className="flex-none md:flex lg:md:flex xl:md:flex border-r-2 rounded-r-xl  ">
                 <div className="w-[35%] md:w-[40rem] m-auto mb-5 md:m-0 md:mb-0">
-                  <img src={goodStudent.studentAvatar} />
+                  <img className="rounded-3xl" src={goodStudent.studentAvatar} />
                 </div>
                 <div className="sogan__body ml-3 md:ml-5 xl:ml-8 justify-center">
                   <div className="font-bold uppercase text-center md:text-left lg:text-left xl:md:text-left">

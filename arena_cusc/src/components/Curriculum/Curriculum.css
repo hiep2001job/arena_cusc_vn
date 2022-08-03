@@ -5,18 +5,26 @@
   right: 0;
   bottom: 0;
   background-position-y: 46%;
+  background-position-x: center;
 }
 
 .menu-active {
   color: black;
   font-weight: 800;
   cursor: default;
-  border-bottom: 4px solid #cd1327;
+  border-bottom: 4px solid #ff0000;
 }
 
-.bg-curriculumDetail {
-  background-size: 780px;
+.menu-active-detail {
+  color: #ff0000;
+  font-weight: 800;
+  cursor: default;
+  border-bottom: 3px solid #ff0000;
 }
+
+/* .bg-curriculumDetail {
+  background-size: 780px;
+} */
 .effect-curriculumDetail {
   transition: 1s;
 }
@@ -34,7 +42,7 @@
 
 .container-curriculumDetail__des {
 }
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .bg-curriculumDetail {
     margin-top: -145px;
     background-position-x: center;
@@ -58,4 +66,35 @@
   .xl\:bg-left {
     background-position: left;
   }
+} */
+
+/*
+BEGIN SCROLL BAR
+*/
+.scroll-box {
+  width: 92%;
+  height: 320px;
+  overflow: auto;
 }
+
+.scroll-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scroll-box::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+.scroll-box::-webkit-scrollbar-thumb {
+  background: none;
+}
+
+/* Handle on hover */
+.scroll-box::-webkit-scrollbar-thumb:hover {
+  background: none;
+}
+/*
+END SCROLL BAR
+*/

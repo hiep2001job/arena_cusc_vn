@@ -1,7 +1,7 @@
 function Description({ children, className }) {
   return (
     <>
-      <div className={`${className} text-base text-left`}>{children}</div>
+      <p className={`${className} text-base text-left`}>{children}</p>
     </>
   );
 }
