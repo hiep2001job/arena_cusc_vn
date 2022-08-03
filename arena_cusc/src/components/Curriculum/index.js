@@ -47,7 +47,7 @@ function Curriculum() {
       image: [{ image: imgProjectHK3 }],
       curriculumsDetail: [
         {
-          image: CurriculumDetail1,
+          image: CurriculumDetail2,
           curriculumsDetail:
             '1. Concepts of Graphics and Illustrations/ Khái niệm về đồ họa và minh họa\n2. Typography Design/ Nghệ thuật thiết kế chữ.\n3. Digital Illustrations/ Đồ họa kỹ thuật số\n4. Image Magic/ Xử lý ảnh phục vụ in ấn và web\n5. Photography Concepts/ Nhiếp ảnh số\n6. Post processing using Lightroom/ Xử lý ảnh hậu kỳ với phần mềm Lightroom\n7. Design for Print and Advertising/ Thiết kế in ấn và quảng cáo\n8. Page Design/ Thiết kế dàn trang\n9. Print Portfolio/ Dự án xây dựng bộ nhận dạng thương hiệu',
           AdvantageOfCourse:
@@ -66,7 +66,7 @@ function Curriculum() {
       image: [{ image: imgProjectHK3 }],
       curriculumsDetail: [
         {
-          image: CurriculumDetail1,
+          image: CurriculumDetail3,
           curriculumsDetail:
             '1. Concepts of Graphics and Illustrations/ Khái niệm về đồ họa và minh họa\n2. Typography Design/ Nghệ thuật thiết kế chữ.\n3. Digital Illustrations/ Đồ họa kỹ thuật số\n4. Image Magic/ Xử lý ảnh phục vụ in ấn và web\n5. Photography Concepts/ Nhiếp ảnh số\n6. Post processing using Lightroom/ Xử lý ảnh hậu kỳ với phần mềm Lightroom\n7. Design for Print and Advertising/ Thiết kế in ấn và quảng cáo\n8. Page Design/ Thiết kế dàn trang\n9. Print Portfolio/ Dự án xây dựng bộ nhận dạng thương hiệu',
           AdvantageOfCourse:
@@ -104,24 +104,39 @@ function Curriculum() {
     `${animationConfig.animationName} ${animationConfig.animationDuration}`,
   );
 
+  // Check is Mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 845);
+  const isMobileController = () => {
+    setIsMobile(window.innerWidth < 1280);
+  };
+  useEffect(() => {
+    window.addEventListener('resize', isMobileController);
+
+    return () => {
+      window.removeEventListener('resize', isMobileController);
+    };
+  });
+
   const handleGetDataCuriculum = (index) => {
     setMenuCurrent(index);
 
-    setEffectCurriculumDetailDuration(`${animationConfig.animationName} ${animationConfig.animationDuration}`);
-
-    setTimeout(() => {
-      setEffectCurriculumDetailDuration('none');
-    }, animationConfig.timeout);
+    console.log(isMobile);
+    if (!isMobile) {
+      setEffectCurriculumDetailDuration(`${animationConfig.animationName} ${animationConfig.animationDuration}`);
+      setTimeout(() => {
+        setEffectCurriculumDetailDuration('none');
+      }, animationConfig.timeout);
+    }
   };
 
   const contentStyle = {
     maxWidth: '900px',
-    width: '90%',
+    width: '95%',
   };
 
   return (
     <>
-      <div className="w-[100%] h-[1330px] relative">
+      <div className="w-[100%] h-[1111px] xl:h-[1330px] mt-5 relative">
         <div
           className="w-[100%] bg-curriculum bg-auto md:bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${backGroundCuriculum})` }}
@@ -137,11 +152,11 @@ function Curriculum() {
             </Description>
 
             {/* Begin Tab Menu */}
-            <div className="flex text-white mt-4 justify-center cursor-pointer">
+            <div className="flex max-w-[70%] mx-auto text-white mt-4 justify-center cursor-pointer">
               {dataCurriculums.map((dataCurruculum, index) => (
                 <div
                   key={index}
-                  className={`mr-3 md:mr-6 ${menuCurrent == index ? 'menu-active' : ''}`}
+                  className={`mr-5 md:mr-6 min-w-fit ${menuCurrent == index ? 'menu-active' : ''}`}
                   onClick={() => handleGetDataCuriculum(index)}
                 >
                   {dataCurruculum.tabTitle}
@@ -151,29 +166,39 @@ function Curriculum() {
             {/* End Tab Menu */}
           </div>
 
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-5 gap-10 md:mr-20">
+          {/* BEGIN CONTENT CURRICULUM */}
+          <div className="mt-10 grid grid-cols-3 md:grid-cols-5 gap-10 md:mr-20">
+            {/* BEGIN BOX SHORT TEXT DESCRIPTION*/}
             <div
-              className={`bg-curriculumDetail effect-curriculumDetail col-span-3 w-full h-[680px] md:h-[618px] md:bg-right xl:bg-background-position--35 bg-no-repeat bg-contain md:bg-cover mt-[-70px]`}
+              className="bg-curriculumDetail effect-curriculumDetail col-span-3 w-full h-[680px] md:h-[618px] xl:h-[680px] md:bg-right xl:bg-background-position--35 bg-no-repeat bg-center bg-cover mt-[-70px]"
               style={{
                 backgroundImage: `url(${dataCurriculums[menuCurrent].backGroundForDetail})`,
                 animation: `${effectCurriculumDetailDuration}`,
               }}
             >
-              <div className="container-curriculumDetail__des mt-48 md:ml-44 lg:ml-8 lg:mr-24 xl:ml-44 xl:text-left ml-8 mr-3 text-center xl:mr-60">
+              <div className="container-curriculumDetail__des mt-48 lg:ml-8 lg:mr-24 xl:ml-44 xl:text-left ml-8 mr-3 text-justify xl:mr-60">
                 <h1 className="text-xl text-white font-bold">{dataCurriculums[menuCurrent].title}</h1>
                 <div className="mt-5 font-medium">{dataCurriculums[menuCurrent].detail}</div>
               </div>
             </div>
+            {/* END BOX SHORT TEXT DESCRIPTION*/}
 
-            <div className="col-span-2 w-full h-auto mt-[-100px] lg:mt-0 ml-10 flex">
-              {dataCurriculums[menuCurrent].image.map((imProject) => (
-                <div className="grow mr-5">
-                  <img className="imgProject w-full" src={imProject.image} />
-                </div>
-              ))}
+            {/* BEGIN PROJECT IMAGE HK */}
+            <div className="col-span-3 md:col-span-2  w-full h-auto mt-[-100px] md:mt-0 lg:mt-0">
+              <div class="flex justify-center mx-5 md:mx-0">
+                {dataCurriculums[menuCurrent].image.map((imProject, index) => (
+                  <div className={`md:grow ${index === 0 ? 'mr-5' : ''}`}>
+                    <img className="w-full" src={imProject.image} />
+                  </div>
+                ))}
+              </div>
             </div>
+            {/* BEGIN PROJECT IMAGE HK */}
           </div>
-          <div className="text-center mt-[20px] xl:mt-[-150px]">
+          {/* END CONTENT CURRICULUM */}
+
+          {/*  BEGIN BUTTON XEM CHI TIẾT POPUP MODAL  */}
+          <div className="text-center mt-[20px] md:mt-[-150px]">
             <Popup
               contentStyle={contentStyle}
               trigger={
@@ -225,6 +250,7 @@ function Curriculum() {
               )}
             </Popup>
           </div>
+          {/*  END BUTTON XEM CHI TIẾT POPUP MODAL */}
         </div>
       </div>
     </>
