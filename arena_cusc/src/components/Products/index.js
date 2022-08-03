@@ -4,9 +4,11 @@ import './products.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Title from '../shared/Title';
+import Button from '../shared/Button';
 import Description from '../shared/Description';
 import testImg_1 from '../../assets/images/san_pham_cua_sinh_vien/3Dcharactercover.jpg';
 import testImg_2 from '../../assets/images/san_pham_cua_sinh_vien/sapixarvirtualbgcoco16x99ccd7110-800x450.jpeg';
+import testImg_3 from '../../assets/images/san_pham_cua_sinh_vien/omg.jpg';
 
 const data = [
   {
@@ -48,7 +50,7 @@ const data = [
     groupName: 'phim ngắn',
     slides: [
       {
-        img: testImg_2,
+        img: testImg_3,
         title: '2',
         subTitle: '',
         time: '2021-2022',
@@ -186,6 +188,9 @@ function Products() {
               ))}
               {/* end slide image */}
             </Slider>
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Button className={`w-[250px]`}>Xem thêm</Button>
           </div>
         </div>
       </div>
