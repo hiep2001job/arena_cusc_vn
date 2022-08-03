@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import SlickArrow from '../shared/SlickArrow';
 
 import './GoodStudentExamples.css';
-import '../shared/StyleGlobal/StyleGlobal.css';
 
 import Description from '../shared/Description';
 import Title from '../shared/Title';
