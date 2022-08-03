@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import './products.css';
 import 'slick-carousel/slick/slick.css';
@@ -115,7 +115,7 @@ function Products() {
         },
       },
       {
-        breakpoint: 576,
+        breakpoint: 998,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -131,12 +131,12 @@ function Products() {
     <div id="products m-[50px]">
       <div className="text-center ">
         <Title className="text-primary-color my-8">sản phẩm nổi bật của sinh viên</Title>
-        <Description className="text-center">
+        <Description className="text-center px-5">
           Sinh viên là niềm tự hào của chúng tôi. hãy cùng <span className="uppercase">cusc arena</span> khám phá các
           sản phẩm tuyệt vời từ sinh viên
         </Description>
       </div>
-      <div className="tab">
+      <div className="tab mx-[50px]">
         {/* Header */}
         {/*  */}
         <div className="process-bar">
@@ -150,7 +150,9 @@ function Products() {
                   index !== activeGroup && setActiveGroup(index);
                 }}
               >
-                <div className="group-name uppercase absolute w-full">{group.groupName}</div>
+                <div className={`group-name uppercase absolute w-full  ${index % 2 !== 0 ? 'bottom-header' : ''}`}>
+                  {group.groupName}
+                </div>
               </li>
             ))}
           </ul>
@@ -160,25 +162,23 @@ function Products() {
           </div>
         </div>
         {/* Content */}
-        <div className="tag-content mt-10">
+        <div className="tag-content mt-10 mx-8">
           <div className="tag-content-item">
             <Slider {...settings}>
               {/* start slide image */}
               {data[activeGroup].slides.map((slide, index) => (
                 <div key={`slide${index}`}>
-                  <div className="box rounded-[20px] m-[10px]">
-                    <div className="box-container h-[300px] relative flex  justify-center items-center rounded-[20px] bg-[#fdf34e]">
-                      <div className="overflow-hidden rounded-[20px] h-full">
-                        <div>
-                          <img className="slide-img h-full w-full" src={slide.img} alt={slide.title} />
-                        </div>
-                      </div>
-                      <div className="overlay">
-                        <div className="pl-[10%]">
-                          <h3>{slide.title}</h3>
-                          <p>{slide.subTitle}</p>
-                          <p>{slide.time}</p>
-                        </div>
+                  <div className="box h-[320px] rounded-[20px] m-[10px] overflow-hidden relative rounded-[20px] xl:h-[240px] lg:h-[200px] md:h-[200px] sm:h-[180px]">
+                    <img
+                      className="slide-img rounded-[20px] bg-[#fdf34e] w-full h-full"
+                      src={slide.img}
+                      alt={slide.title}
+                    />
+                    <div className="overlay w-full h-full top-1/2 left-1/2 absolute translate-x-[-50%] translate-y-[-50%] rounded-[20px]">
+                      <div className="pl-[10%]">
+                        <h3>{slide.title}</h3>
+                        <p>{slide.subTitle}</p>
+                        <p>{slide.time}</p>
                       </div>
                     </div>
                   </div>

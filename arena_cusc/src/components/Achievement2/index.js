@@ -89,14 +89,19 @@ const Highlighttem = ({ img, value, title }) => {
           <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
           <div className="center-line" style={styles.highlight.footer.centerLine}></div>
           {/* Stroke-double animation */}
-          <div className="absolute translate-x-[0] translate-y-[172%]">
+          {/* <div className="circle-bottom absolute translate-x-[0] translate-y-[263%]">
             <Stroke>
-              <div
-                className="circle-bottom hover:outline-primary-color hover:outline-double hover:outline-offset-[12px] hover:outline-[13px] "
-                style={styles.highlight.footer.circleBottom}
-              ></div>
+              <div style={styles.highlight.footer.circleBottom}></div>
             </Stroke>
-          </div>
+          </div> */}
+          <div
+            className="circle-bottom absolute translate-x-[0] translate-y-[263%]"
+            style={styles.highlight.footer.circleBottom}
+          ></div>
+          <div
+            className="circle-bottom-outline absolute translate-x-[0] translate-y-[263%]"
+            style={styles.highlight.footer.circleBottom}
+          ></div>
         </div>
       </div>
     </div>
@@ -106,7 +111,7 @@ const Highlighttem = ({ img, value, title }) => {
 const imageSize = 120;
 const circleTopSize = 40;
 const circleBottomSize = 25;
-const footerHeight = 60;
+const footerHeight = 90;
 
 const styles = {
   container: {
@@ -202,10 +207,7 @@ const styles = {
         borderWidth: 3,
         borderColor: 'red',
         borderRadius: '50%',
-        // position: 'absolute',
         backgroundColor: 'white',
-        // transform: 'translate(0, calc(50% + 1px))',
-        // bottom: 0,
       },
     },
   },

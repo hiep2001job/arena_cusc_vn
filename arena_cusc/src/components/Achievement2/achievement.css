@@ -1,9 +1,48 @@
-
-.circle-bottom:hover .animetion-stroke{
-
+.achievement-box:hover .header,
+.achievement-box:hover .content,
+.achievement-box:hover .footer .center-line {
+    transform: translateY(-20px) !important;
 }
 
+.achievement-box:hover .header {
+    z-index: 1;
+}
+
+.achievement-box:hover .content {
+    z-index: -1;
+}
+
+.achievement-box:hover .footer .circle-top {
+    background-color: var(--primary-color) !important;
+    transform: translateY(-40px) !important;
+    z-index: 1;
+}
+
+.achievement-box:hover .footer .center-line {
+    height: 120% !important;
+}
+
+.achievement-box:hover .footer .circle-bottom {
+    outline-color: var(--primary-color);
+    outline-style: solid;
+    outline-offset: 9px;
+    outline-width: 2px;
+}
+
+.achievement-box:hover .footer .circle-bottom-outline {
+    outline-color: var(--primary-color);
+    outline-style: solid;
+    outline-offset: 18px;
+    outline-width: 2px;
+}
+
+.achievement-box:hover .footer .circle-bottom .stroke-content {
+    visibility: visible !important;
+}
+
+
 /* responsive */
+
 @media (max-width:1080px) {
     .achievement .achievement-content .achievement-box .number {
         font-size: 2rem !important;
