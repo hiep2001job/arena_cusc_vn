@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Curriculum from './components/Curriculum';
 import GoodStudentExamples from './components/GoodStudentExamples';
 import Instructors from './components/Instructors';
+import News from './components/News';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
       <Header />
       <Banner />
       <Slide />
-      <CallToAction />
+      <CallToAction/>
       <Instructors/>
-      <GoodStudentExamples />  
-  
+      <GoodStudentExamples /> 
+      <News/>
+ 
     </>
   );
 }

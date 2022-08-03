@@ -74,11 +74,11 @@ const Instructors = () => {
 
         <Slider className="mt-10" {...settings}>
           {instructors.map((instructor, index) => (
-            <div key={index} className="instr-wrapper relative ">
-              <div className="instr-img-wrapper ">
+            <div key={index} className="instr-wrapper relative min-h-fit">
+              <div className="instr-img-wrapper  h-[20rem] overflow-hidden">
                 <img
                   alt="Ảnh giảng viên Arena Cusc"
-                  className="instr-img "
+                  className="instr-img w-full top-0"
                   src={instructor.image}
                 />
               </div>
