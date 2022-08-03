@@ -17,7 +17,7 @@ import CurriculumDetail3 from '../../assets/images/curriculum/CurriculumDetail3.
 import imgProjectHK3 from '../../assets/images/curriculum/3D_Game_Character.png';
 import imgProjectHK4_1 from '../../assets/images/curriculum/poster.jpg';
 import imgProjectHK4_2 from '../../assets/images/curriculum/poster_2.jpg';
-import ContentModel from './CurriculumContentModal';
+import ContentModal from '../shared/PopUpModal';
 
 function Curriculum() {
   const dataCurriculums = [
@@ -209,7 +209,7 @@ function Curriculum() {
               modal
             >
               {(close) => (
-                <ContentModel
+                <ContentModal
                   title={'Chương trình đào tạo: 4 học kỳ: thời gian đào tạo 2.5 năm'}
                   content={
                     <>
