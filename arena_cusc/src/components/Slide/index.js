@@ -10,7 +10,7 @@ import squidGame from '../../assets/Slide/squildGame.png';
 import milion from '../../assets/Slide/minion.jpg';
 import { useState } from 'react';
 
-function Slide() {
+function Slide() { 
   const slideObj = [spiderman, doctorStrange, squidGame, milion];
   const [currentImage, setCurrentImage] = useState(0);
 

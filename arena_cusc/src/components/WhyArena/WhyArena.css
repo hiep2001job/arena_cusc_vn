@@ -1,0 +1,17 @@
+.whyarena__border {
+    border: 3px solid #f6f6f6;
+    border-radius: 15px;
+    box-shadow: -2px -2px 24px 0px #f6f6f6;
+}
+.whyarena__border:hover .whyarena__image {
+    transform: scale(1.1);
+}
+.whyarena__border:hover {
+    border: 1px solid #fff664;
+    border-radius: 15px;
+}
+.whyarena__image {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 4px #f0f0f0;
+}
