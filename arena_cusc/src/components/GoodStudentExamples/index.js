@@ -9,8 +9,8 @@ import '../shared/StyleGlobal/StyleGlobal.css';
 import Description from '../shared/Description';
 import Title from '../shared/Title';
 
-import image1 from '../../assets/images/goodStudentExamples/Untitled-1.png';
-import image2 from '../../assets/images/goodStudentExamples/Untitled-2.png';
+import image1 from '../../assets/images/GoodStudentExamples/Untitled-1.png';
+import image2 from '../../assets/images/GoodStudentExamples/Untitled-2.png';
 import CustomPaging from '../shared/CustomPaging';
 
 const goodStudents = [
