@@ -1,11 +1,12 @@
 import React from 'react';
-import './style.css';
+import './achievement.css';
 import Title from '../../components/shared/Title';
 import BrandImg from '../../assets/images/No1_Brand.png';
 import Icon_1 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-1.png';
 import Icon_2 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-2.png';
 import Icon_3 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-3.png';
 import Icon_4 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-4.png';
+import Stroke from '../shared/Stroke-double';
 
 const data = [
   { img: Icon_1, value: 25, title: 'năm kinh nghiệm' },
@@ -18,7 +19,7 @@ function Achievements() {
   return (
     <>
       <div className="achievement" style={{ margin: 50 }}>
-        <Title className="text-center text-primary-color">những điểm nổi bật của arena</Title>
+        <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />
           {data.map((val, idx) => (
@@ -32,25 +33,25 @@ function Achievements() {
 
 const BrandItem = () => {
   return (
-    <div className='achievement-box brand-img' style={styles.brand}>
+    <div className="achievement-box brand-img" style={styles.brand}>
       <img src={BrandImg} alt="brand-img" />
     </div>
   );
 };
-
+// Highlighttem
 const Highlighttem = ({ img, value, title }) => {
   const [width, setWidth] = React.useState(imageSize);
   const ref = React.useRef(null);
   React.useEffect(() => {
-    // console.log(ref?.current);
     if (ref?.current?.clientWidth) {
       setWidth(ref?.current?.clientWidth / 2);
     }
   }, [ref.current]);
 
   return (
-     <div className='achievement-box ' style={styles.highlight.box} ref={ref}>
-      <div className='achievement-box-container' style={styles.highlight.container} ref={ref}>
+    // Highlighttem content
+    <div className="achievement-box " style={styles.highlight.box} ref={ref}>
+      <div className="achievement-box-container" style={styles.highlight.container} ref={ref}>
         <div
           className="header"
           style={{
@@ -76,15 +77,26 @@ const Highlighttem = ({ img, value, title }) => {
             height: `calc(100% - ${(width + footerHeight) / 2}px)`,
           }}
         >
-          <div className='number' style={styles.highlight.content.value}>
+          <div className="number" style={styles.highlight.content.value}>
             {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
           </div>
-          <div className='titile' style={styles.highlight.content.title}>{title?.toUpperCase()}</div>
+          <div className="titile" style={styles.highlight.content.title}>
+            {title?.toUpperCase()}
+          </div>
         </div>
+        {/* footer */}
         <div className="footer" style={styles.highlight.footer.container}>
           <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
           <div className="center-line" style={styles.highlight.footer.centerLine}></div>
-          <div className="circle-bottom" style={styles.highlight.footer.circleBottom}></div>
+          {/* Stroke-double animation */}
+          <div className="absolute translate-x-[0] translate-y-[172%]">
+            <Stroke>
+              <div
+                className="circle-bottom hover:outline-primary-color hover:outline-double hover:outline-offset-[12px] hover:outline-[13px] "
+                style={styles.highlight.footer.circleBottom}
+              ></div>
+            </Stroke>
+          </div>
         </div>
       </div>
     </div>
@@ -190,10 +202,10 @@ const styles = {
         borderWidth: 3,
         borderColor: 'red',
         borderRadius: '50%',
-        position: 'absolute',
+        // position: 'absolute',
         backgroundColor: 'white',
-        transform: 'translate(0, calc(50% + 1px))',
-        bottom: 0,
+        // transform: 'translate(0, calc(50% + 1px))',
+        // bottom: 0,
       },
     },
   },

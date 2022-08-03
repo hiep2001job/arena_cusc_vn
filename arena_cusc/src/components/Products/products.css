@@ -1,0 +1,121 @@
+/* tab process bar */
+
+.process-bar {
+    position: relative;
+    height: 50px;
+    margin-top: 65px
+}
+
+.process-bar ul {
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+}
+
+.process-bar ul li {
+    list-style: none;
+    float: left;
+    width: 20%;
+    text-align: center;
+    /* color: #aaa; */
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: bottom;
+    height: 60px;
+    position: relative;
+}
+
+.process-bar ul li::after {
+    cursor: pointer;
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    margin: auto;
+    border: solid 3px #ed2f34;
+    border-radius: 50%;
+    margin-top: 40px;
+}
+
+.process-bar ul li.active::after {
+    background: #ed2f34;
+    transition: outline-width ease 0.5s;
+    transition: outline-offset 0.3s;
+}
+
+
+/* box */
+
+.box {
+    box-shadow: 0 0 10px black;
+}
+
+.box .box-container div div .slide-img {
+    transition: transform .3s ease-in;
+    transform: scale(1.4);
+    transform-origin: 0 0;
+}
+
+.box .box-container .overlay {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.box .box-container .overlay h3,
+.box .box-container .overlay p {
+    color: #fdf34e;
+    align-items: center;
+}
+
+.box:hover .box-container {
+    padding: 0.75rem;
+    transition: all ease-in 0.5s;
+}
+
+.box:hover .box-container .slide-img {
+    object-fit: cover;
+    transform: scale(1.25) translateY(-10%);
+    height: 90%;
+    width: 90%;
+}
+
+.box:hover .box-container .overlay {
+    visibility: visible;
+    animation: fade 1s;
+}
+
+
+/* animation  */
+
+@keyframes border-fill-in {
+    0% {
+        padding: 0;
+    }
+    100% {
+        padding: 10px;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

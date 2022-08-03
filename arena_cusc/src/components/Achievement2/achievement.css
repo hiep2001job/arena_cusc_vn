@@ -1,3 +1,9 @@
+
+.circle-bottom:hover .animetion-stroke{
+
+}
+
+/* responsive */
 @media (max-width:1080px) {
     .achievement .achievement-content .achievement-box .number {
         font-size: 2rem !important;
