@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 import WhyArena from './components/WhyArena';
 import AdmissionInfo from './components/AdmissionInfo';
 
-
 function App() {
   return (
     <>
