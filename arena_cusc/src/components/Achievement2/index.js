@@ -18,7 +18,7 @@ const data = [
 function Achievements() {
   return (
     <>
-      <div className="achievement" style={{ margin: 50 }}>
+      <div className="achievement px-5 xl:px-36" style={{ margin: 50 }}>
         <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />

@@ -324,7 +324,7 @@ function Products() {
   const [activeItem, setactiveItem] = useState(0);
   // const ref = useRef({});
   return (
-    <div id="products m-[50px]">
+    <div id="products px-5 xl:px-36">
       <div className="text-center ">
         <Title className="text-primary-color my-8">sản phẩm nổi bật của sinh viên</Title>
         <Description className="text-center px-5">
@@ -356,7 +356,7 @@ function Products() {
           </ul>
           {/* horizontal line*/}
           <div>
-            <div className="w-full m-auto bg-primary-color h-1 absolute top-[24px]"></div>
+            <div className="w-full m-auto bg-primary-color bg-[#ed2f34] h-1 absolute top-[24px]"></div>
           </div>
         </div>
         {/* Content */}
