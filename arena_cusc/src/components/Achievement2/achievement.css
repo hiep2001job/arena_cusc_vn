@@ -1,0 +1,156 @@
+.achievement-box:hover .header,
+.achievement-box:hover .content,
+.achievement-box:hover .footer .center-line {
+    transform: translateY(-20px) !important;
+}
+
+.achievement-box:hover .header {
+    z-index: 1;
+}
+
+.achievement-box:hover .content {
+    z-index: -1;
+}
+
+.achievement-box:hover .footer .circle-top {
+    background-color: var(--primary-color) !important;
+    transform: translateY(-40px) !important;
+    z-index: 1;
+}
+
+.achievement-box:hover .footer .center-line {
+    height: 120% !important;
+}
+
+.achievement-box:hover .footer .circle-bottom {
+    outline-color: var(--primary-color);
+    outline-style: solid;
+    outline-offset: 9px;
+    outline-width: 2px;
+}
+
+.achievement-box:hover .footer .circle-bottom-outline {
+    outline-color: var(--primary-color);
+    outline-style: solid;
+    outline-offset: 18px;
+    outline-width: 2px;
+}
+
+.achievement-box:hover .footer .circle-bottom .stroke-content {
+    visibility: visible !important;
+}
+
+
+/* responsive */
+
+@media (max-width:1900px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 90px !important;
+    }
+}
+
+@media (max-width:1280px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 140px !important;
+        height: 140px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 70px !important;
+    }
+}
+
+@media (max-width:1080px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 65px !important;
+    }
+    .achievement .achievement-content .achievement-box .number {
+        font-size: 2rem !important;
+    }
+    .achievement .achievement-content .achievement-box .title {
+        font-size: 2rem !important;
+    }
+    .achievement .achievement-content .achievement-box .header img {
+        width: 98px !important;
+        height: 98px !important;
+    }
+}
+
+@media (max-width:991px) {
+    .achievement .achievement-content {
+        border-bottom: none !important;
+        display: revert !important;
+        margin: auto !important;
+    }
+    .achievement .achievement-content .achievement-box {
+        display: flex !important;
+        width: 100% !important;
+        padding: 15px !important;
+        justify-content: center;
+    }
+    .achievement .achievement-content .achievement-box .achievement-box-container {
+        width: 60% !important;
+    }
+    .achievement .achievement-box .brand-img {
+        justify-content: center;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 90px !important;
+    }
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .achievement .achievement-content .achievement-box .content {
+        width: '100%';
+        height: calc(100% - 150px) !important;
+        padding-top: 100px !important;
+    }
+    .achievement .achievement-content .footer {
+        display: none !important;
+        color: #fff212;
+    }
+}
+
+@media (max-width:768px) {
+    .achievement .achievement-content {
+        border-bottom: none !important;
+        display: revert !important;
+        margin: auto !important;
+    }
+    .achievement .achievement-content .achievement-box {
+        display: flex !important;
+        width: 100% !important;
+        padding: 15px !important;
+        justify-content: center;
+    }
+    .achievement .achievement-content .achievement-box .achievement-box-container .content .number {
+        font-size: 2rem !important;
+    }
+    .achievement .achievement-content .achievement-box .achievement-box-container .content .title {
+        font-size: 2rem !important;
+    }
+    .achievement .achievement-box .brand-img {
+        justify-content: center;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 48px !important;
+    }
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 96px !important;
+        height: 96px !important;
+    }
+    .achievement .achievement-content .achievement-box .content {
+        padding-top: 58px !important;
+    }
+    .achievement .achievement-content .footer {
+        display: none !important;
+    }
+}
