@@ -99,8 +99,11 @@
     animation: fade 1s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .products-bottom-header {
         transform: translate(0, 90px);
+    }
+    .tag-content .tag-content-item .box {
+        height: 240px;
     }
 }
