@@ -75,8 +75,8 @@ const News = () => {
             <div className="rotate-wrapper relative cursor-pointer overflow-hidden  w-auto h-[20rem] rounded-3xl mx-auto ">
               <div className="news-content relative  h-full  flex flex-col  justify-end">
                 <div className="news-overlay"></div>
-                <div className="news-img absolute left-0 bottom-0 h-full w-auto scale-150 z-[-1]">
-                  <img className="h-full object-cover" src={news.image} />
+                <div className="news-img absolute  h-full w-auto scale-150 z-[-1]">
+                  <img className="h-full object-cover bottom-0 left-0" src={news.image} />
                 </div>
 
                 <div
