@@ -89,7 +89,7 @@
 }
 
 .tag-content .tag-content-item .box:hover .slide-img {
-    padding: 2%;
+    padding: 1%;
     transform: scale(1);
     transition: all ease-in 0.5s;
 }

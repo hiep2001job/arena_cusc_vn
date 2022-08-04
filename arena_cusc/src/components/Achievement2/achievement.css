@@ -45,16 +45,6 @@
 
 @media (max-width:1900px) {
     .achievement .achievement-content .achievement-box .header .header-image {
-        width: 180px !important;
-        height: 180px !important;
-    }
-    .achievement .achievement-content .achievement-box .header {
-        height: 90px !important;
-    }
-}
-
-@media (max-width:1280px) {
-    .achievement .achievement-content .achievement-box .header .header-image {
         width: 140px !important;
         height: 140px !important;
     }
@@ -62,6 +52,16 @@
         height: 70px !important;
     }
 }
+
+    /* @media (max-width:1280px) {
+        .achievement .achievement-content .achievement-box .header .header-image {
+            width: 140px !important;
+            height: 140px !important;
+        }
+        .achievement .achievement-content .achievement-box .header {
+            height: 70px !important;
+        }
+    } */
 
 @media (max-width:1080px) {
     .achievement .achievement-content .achievement-box .header .header-image {
