@@ -78,7 +78,7 @@ const Instructors = () => {
               <div className="instr-img-wrapper  h-[20rem] overflow-hidden">
                 <img
                   alt="Ảnh giảng viên Arena Cusc"
-                  className="instr-img h-full w-auto top-0"
+                  className="instr-img h-full w-auto top-0 object-cover"
                   src={instructor.image}
                 />
               </div>

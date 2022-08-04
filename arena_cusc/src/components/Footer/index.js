@@ -5,6 +5,7 @@ import youtube from '../../assets/images/icon/youtube.jpg';
 import instagram from '../../assets/images/icon/instagram.png';
 
 import './Footer.css';
+import Title from '../shared/Title';
 function Footer() {
     return (
         <>
@@ -36,7 +37,8 @@ function Footer() {
                     </div>
                     <div class="mt-5">
                         <div>
-                            <h1 class="text-center font-bold uppercase text-3xl my-5">TRUNG TÂM CÔNG NGHỆ PHẦN MỀM ĐẠI HỌC CẦN THƠ</h1>
+                            <Title className="text-center font-bold uppercase  ">TRUNG TÂM CÔNG NGHỆ PHẦN MỀM ĐẠI HỌC CẦN THƠ</Title>
+                            {/* <h1 class=""></h1> */}
                             <p class="text-center font-bold text-base">
                                 <a className='flex justify-center' target="_blank" href="https://www.google.com/maps/place/Khu+3+-+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%E1%BA%A7n+Th%C6%A1/@10.0336471,105.779395,19z/data=!4m13!1m7!3m6!1s0x31a0881f7623d0c1:0x862e394bf5f45f48!2zMSDEkC4gTMO9IFThu7EgVHLhu41uZywgQW4gUGjDuiwgTmluaCBLaeG7gXUsIEPhuqduIFRoxqEsIFZp4buHdCBOYW0!3b1!8m2!3d10.0336799!4d105.7790983!3m4!1s0x31a0881fa25557af:0x350619b0d40fc3b4!8m2!3d10.0336736!4d105.779904?hl=vi-VN">
                                     <div className='mr-2'>
