@@ -1,0 +1,41 @@
+import icon1 from '../../assets/images/Icon_tai_sao_chon_CUSC/1.jpg';
+import icon2 from '../../assets/images/Icon_tai_sao_chon_CUSC/4.jpg';
+import icon3 from '../../assets/images/Icon_tai_sao_chon_CUSC/2.jpg';
+import icon4 from '../../assets/images/Icon_tai_sao_chon_CUSC/6.png';
+import icon5 from '../../assets/images/Icon_tai_sao_chon_CUSC/3.png';
+import icon6 from '../../assets/images/Icon_tai_sao_chon_CUSC/5.png';
+
+import './WhyArena.css';
+const whyArenaData=[
+    {icon:icon1,text:"Chương trình đào tạo được cập nhật liên tục, hướng thị trường, bám sát thực tế các lĩnh vực, đáp ứng yêu cầu tuyển dụng."},
+    {icon:icon2,text:"Phương pháp đào tạo kết hợp chú trọng thực hành, áp dụng các công cụ và kỹ thuật mới nhất, học liệu được trang bị AR."},
+    {icon:icon3,text:"Tăng cường năng lực tiếng Anh với chương trình đào tạo chuẩn Quốc tế."},
+    {icon:icon4,text:"Tối ưu hóa thời gian nhờ học trực tiếp vào kiến thức chuyên ngành, hệ thống Onlinevarsity hỗ trợ học bất cứ lúc nào, học bất cứ nơi đâu."},
+    {icon:icon5,text:"Bằng cấp được công nhận toàn cầu, phát triển Portfolio của người học."},
+    {icon:icon6,text:"Đội ngũ giảng viên được đào tạo và tập huấn từ các quốc gia phát triển cao về CNTT."}
+]
+function WhyArena() {
+    return (
+        <>
+            <div className='w-screen'>
+                <h1 className="md:text-3xl font-bold uppercase text-center text-[#ed3237]">
+                    Tại sao chọn Arena Multimedia - CUSC?
+                </h1>
+                <div className='w-9/12 mx-auto mt-5 grid grid-flow-col grid-rows-3 grid-cols-2 gap-8 text-base'>
+                    {whyArenaData.map((item,index)=>(
+                        <div className='flex justify-between col-span-full lg:col-auto whyarena__border'>
+                            <div className='w-2/12 p-5 grid place-items-center whyarena__image'>
+                                <img alt='icon' className='h-auto min-w-10 w-auto' src={item.icon}/>
+                            </div>
+                            <div className='w-10/12 pl-4 py-2 pr-8 align-middle grid place-items-center'>
+                                <span className='m-auto block font-medium'>{item.text}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default WhyArena;

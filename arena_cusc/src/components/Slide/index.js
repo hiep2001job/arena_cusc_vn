@@ -12,7 +12,7 @@ import doctorStrange from '../../assets/images/slide/doctor-strange.jpg';
 import squidGame from '../../assets/images/slide/squildGame.png';
 import milion from '../../assets/images/slide/minion.jpg';
 
-function Slide() {
+function Slide() { 
   const slideObj = [spiderman, doctorStrange, squidGame, milion];
   const [currentImage, setCurrentImage] = useState(0);
 
