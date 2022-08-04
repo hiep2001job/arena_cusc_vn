@@ -100,17 +100,6 @@
     animation: fade 1s;
 }
 
-
-/* responsive  */
-
-
-/* @media (max-width:998px) {
-    .tag-content .tag-content-item .box {
-        height: 280px;
-    }
-}
-*/
-
 @media (max-width: 768px) {
     .bottom-header {
         transform: translate(0, 80px);

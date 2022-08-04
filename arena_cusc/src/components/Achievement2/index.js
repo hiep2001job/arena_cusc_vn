@@ -88,12 +88,6 @@ const Highlighttem = ({ img, value, title }) => {
         <div className="footer" style={styles.highlight.footer.container}>
           <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
           <div className="center-line" style={styles.highlight.footer.centerLine}></div>
-          {/* Stroke-double animation */}
-          {/* <div className="circle-bottom absolute translate-x-[0] translate-y-[263%]">
-            <Stroke>
-              <div style={styles.highlight.footer.circleBottom}></div>
-            </Stroke>
-          </div> */}
           <div
             className="circle-bottom absolute translate-x-[0] translate-y-[263%]"
             style={styles.highlight.footer.circleBottom}
