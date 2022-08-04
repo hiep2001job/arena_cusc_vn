@@ -73,7 +73,6 @@
     width: 100%;
     border: none;
     box-sizing: border-box;
-    /* height: 100%; */
 }
 
 .tag-content .tag-content-item .box .overlay {
@@ -101,7 +100,7 @@
 }
 
 @media (max-width: 768px) {
-    .bottom-header {
-        transform: translate(0, 80px);
+    .products-bottom-header {
+        transform: translate(0, 90px);
     }
 }

@@ -43,7 +43,34 @@
 
 /* responsive */
 
+@media (max-width:1900px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 90px !important;
+    }
+}
+
+@media (max-width:1280px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 140px !important;
+        height: 140px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 70px !important;
+    }
+}
+
 @media (max-width:1080px) {
+    .achievement .achievement-content .achievement-box .header .header-image {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    .achievement .achievement-content .achievement-box .header {
+        height: 65px !important;
+    }
     .achievement .achievement-content .achievement-box .number {
         font-size: 2rem !important;
     }
@@ -76,9 +103,8 @@
     }
     .achievement .achievement-content .achievement-box .header {
         height: 90px !important;
-        /* height: imageSize / 2 + 10, */
     }
-    .achievement .achievement-content .achievement-box .header img {
+    .achievement .achievement-content .achievement-box .header .header-image {
         width: 180px !important;
         height: 180px !important;
     }
@@ -117,7 +143,7 @@
     .achievement .achievement-content .achievement-box .header {
         height: 48px !important;
     }
-    .achievement .achievement-content .achievement-box .header img {
+    .achievement .achievement-content .achievement-box .header .header-image {
         width: 96px !important;
         height: 96px !important;
     }

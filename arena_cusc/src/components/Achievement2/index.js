@@ -60,6 +60,7 @@ const Highlighttem = ({ img, value, title }) => {
           }}
         >
           <img
+            className="header-image"
             src={img}
             alt="highlight-img"
             style={{

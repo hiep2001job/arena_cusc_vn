@@ -6,9 +6,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import Title from '../shared/Title';
 import Button from '../shared/Button';
 import Description from '../shared/Description';
-import testImg_1 from '../../assets/images/san_pham_cua_sinh_vien/3Dcharactercover.jpg';
-import testImg_2 from '../../assets/images/san_pham_cua_sinh_vien/sapixarvirtualbgcoco16x99ccd7110-800x450.jpeg';
-import testImg_3 from '../../assets/images/san_pham_cua_sinh_vien/omg.jpg';
+import testImg_1 from '../../assets/images/san_pham_cua_sinh_vien/yasuo.jpg';
+import testImg_2 from '../../assets/images/san_pham_cua_sinh_vien/3Dcharactercover.jpg';
+import testImg_3 from '../../assets/images/3D_Game_Character.png';
 
 const data = [
   {
@@ -55,11 +55,101 @@ const data = [
         subTitle: '',
         time: '2021-2022',
       },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_3,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
     ],
   },
   {
     groupName: 'nhân vật game',
     slides: [
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
       {
         img: testImg_2,
         title: '2',
@@ -77,11 +167,107 @@ const data = [
         subTitle: '',
         time: '2021-2022',
       },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
     ],
   },
   {
     groupName: 'sketching',
     slides: [
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
+      {
+        img: testImg_2,
+        title: '2',
+        subTitle: '',
+        time: '2021-2022',
+      },
       {
         img: testImg_2,
         title: '2',
@@ -119,6 +305,14 @@ function Products() {
       {
         breakpoint: 998,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          rows: 1,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
@@ -152,7 +346,9 @@ function Products() {
                   index !== activeGroup && setActiveGroup(index);
                 }}
               >
-                <div className={`group-name uppercase absolute w-full  ${index % 2 !== 0 ? 'bottom-header' : ''}`}>
+                <div
+                  className={`group-name uppercase absolute w-full  ${index % 2 !== 0 ? 'products-bottom-header' : ''}`}
+                >
                   {group.groupName}
                 </div>
               </li>
@@ -170,7 +366,7 @@ function Products() {
               {/* start slide image */}
               {data[activeGroup].slides.map((slide, index) => (
                 <div key={`slide${index}`}>
-                  <div className="box h-[320px] rounded-[20px] m-[10px] overflow-hidden relative rounded-[20px] xl:h-[240px] lg:h-[200px] md:h-[200px] sm:h-[180px]">
+                  <div className="box h-[320px] rounded-[20px] m-[10px] overflow-hidden relative rounded-[20px] xl:h-[240px] lg:h-[200px] sm:h-[200px]">
                     <img
                       className="slide-img rounded-[20px] bg-[#fdf34e] w-full h-full"
                       src={slide.img}
