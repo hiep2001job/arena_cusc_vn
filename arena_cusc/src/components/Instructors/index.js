@@ -31,7 +31,7 @@ var settings = {
   speed: 500,
   slidesToShow: 5,
   slidesToScroll: 5,
-  initialSlide: 0,
+
   responsive: [
     {
       breakpoint: 1024,
@@ -78,7 +78,7 @@ const Instructors = () => {
               <div className="instr-img-wrapper  h-[20rem] overflow-hidden">
                 <img
                   alt="Ảnh giảng viên Arena Cusc"
-                  className="instr-img w-full top-0"
+                  className="instr-img h-full w-auto top-0"
                   src={instructor.image}
                 />
               </div>

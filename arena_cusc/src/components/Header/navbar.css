@@ -144,7 +144,7 @@
 }
 .menu li {
   font-size: 16px;
-  padding: 20px;
+  padding: 6px 20px ;
   font-weight: bold;
   text-transform: uppercase;
   border-top: 1px solid #dbdcd2;
@@ -153,6 +153,7 @@
   position: relative;
   letter-spacing: 1px;
   left: 2rem;
+
   /* color: #00275a; */
 }
 .menu > li {

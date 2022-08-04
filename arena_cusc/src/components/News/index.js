@@ -27,31 +27,40 @@ const newsData = [
   { text: 'Thi Multimedia Quốc tế: Học viên trổ tài và rinh giải', image: new3 },
 ];
 //Slider settings
+//Slider settings
 var settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
-  initialSlide: 0,
+
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1248,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-      },
+       
+      }
     },
-
     {
-      breakpoint: 480,
+      breakpoint: 845,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 500,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 const News = () => {
   return (
@@ -67,7 +76,7 @@ const News = () => {
               <div className="news-content relative  h-full  flex flex-col  justify-end">
                 <div className="news-overlay"></div>
                 <div className="news-img absolute left-0 bottom-0 h-full w-auto scale-150 z-[-1]">
-                  <img className="h-full" src={news.image} />
+                  <img className="h-full object-cover" src={news.image} />
                 </div>
 
                 <div
