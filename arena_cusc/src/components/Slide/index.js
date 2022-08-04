@@ -71,14 +71,14 @@ function Slide() {
 
   return (
     <>
-      <div className="w-[100%] h-[800px] relative">
+      <div className="w-[100%] h-[900px] md:h-[1200px] relative mt-[-25%] md:mt-[-45%] z-[1]">
         <div
           className="w-[100%] bg-slide px-5 md:px-28 md:bg-[length:100%_100%]"
           style={{ backgroundImage: `url(${slideObj[currentImage]})` }}
         >
           <div className="overlay-slide"></div>
           <div className="relative">
-            <h1 className="md:text-3xl font-bold text-center uppercase text-[yellow] mt-28 ">
+            <h1 className="md:text-3xl font-bold text-center uppercase text-[yellow] mt-40 md:mt-[14rem] lg:mt-[19rem] xl:mt-[28rem]">
               Học Arena, vương xa sáng tạo
             </h1>
 
