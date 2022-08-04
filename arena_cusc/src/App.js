@@ -23,15 +23,17 @@ function App() {
       <Banner />
       <Slide />
       <CallToAction />
+      {/* whyarena */}
+      <Achieverments />
       <Instructors />
+      {/* Addmission */}
       <GoodStudentExamples />
+      {/* Curriculum */}
+      <Products />
       <News />
       <Footer />
-      <Achieverments />
-      <Products />
     </>
   );
 }
-
 
 export default App;
