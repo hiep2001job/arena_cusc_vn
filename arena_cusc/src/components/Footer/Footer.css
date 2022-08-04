@@ -1,8 +1,11 @@
 
 
 .footer__background {
+    /* width: 100%;
+    height: 100%; */
     background-image: url(../../assets/images/Footer_background.png);   
- 
+    /* background-repeat: no-repeat;
+    background-position-y: 62%; */
 }
 .footer__icon--center {
     margin: 0px 535px;

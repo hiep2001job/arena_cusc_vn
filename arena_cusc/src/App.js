@@ -16,12 +16,12 @@ function App() {
       {/* <Header/>
       <Banner/>      
       <Slide /> */}
-      <WhyArena/>
+      {/* <WhyArena/> */}
       {/* <h1>OK</h1>
-      <h1>OK</h1> */}
       {/* <AdmissionInfo/> */}
       {/* <GoodStudentExamples/> */}
-      {/* <Footer/> */}
+      <div className='bg-red-500'>content ne</div>
+      <Footer/>
       {/* <h1>OK</h1> */}
     </>
   );
