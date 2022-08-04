@@ -23,9 +23,10 @@ function Curriculum() {
   const dataCurriculums = [
     {
       tabTitle: 'Học kỳ I',
-      backGroundForDetail: bgCuriculumDetailHk3,
+      backGroundForDetail: bgCuriculumDetailHk4,
       title: 'Học kỳ I',
-      detail: 'Chưa có dữ liệu cho HK1',
+      detail:
+        '(Kỳ 1 chưa có dữ liệu) giúp học viên trang bị đầy đủ những kỹ năng để đáp ứng nhu cầu của ngành công nghiệp phim hoạt hình hiện đại với các môn: xây dựng mô hình 3D, làm vật liệu cho các game ánh sáng, rendering, gắn xương, diễn hoạt nhân vật. Đi từ việc nhận viết rõ ràng thuật ngữ đến thành thạo tạo hình và thiết lập hình ảnh, đón nhận cơ hội việc làm và sẵn sàng đảm nhiệm nhiều vị trí thiết kế quan trọng như: họa sĩ dựng hình 3D, họa sĩ vật liệu, họa sĩ ánh sáng...',
       image: [{ image: imgProjectHK3 }],
       curriculumsDetail: [
         {
@@ -41,7 +42,7 @@ function Curriculum() {
     },
     {
       tabTitle: 'Học kỳ II',
-      backGroundForDetail: bgCuriculumDetailHk4,
+      backGroundForDetail: bgCuriculumDetailHk3,
       title: 'Học kỳ II',
       detail: 'Chưa có dữ liệu cho HKII',
       image: [{ image: imgProjectHK3 }],
