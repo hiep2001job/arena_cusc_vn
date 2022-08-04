@@ -21,14 +21,14 @@ function WhyArena() {
                 <h1 className="md:text-3xl font-bold uppercase text-center text-[#ed3237]">
                     Tại sao chọn Arena Multimedia - CUSC?
                 </h1>
-                <div className='w-9/12 mx-auto mt-5 grid grid-flow-col grid-rows-3 grid-cols-2 gap-8 text-base'>
-                    {whyArenaData.map((item,index)=>(
-                        <div className='flex justify-between col-span-full lg:col-auto whyarena__border'>
-                            <div className='w-2/12 p-5 grid place-items-center whyarena__image'>
-                                <img alt='icon' className='h-auto min-w-10 w-auto' src={item.icon}/>
+                <div className='mt-10 w-10/12 md:w-9/12 mx-auto grid grid-cols-2 gap-8 text-base'>
+                    {whyArenaData.map((item, index)=>(
+                        <div className='whyarena__border w-full col-span-2 md:col-span-1 flex'>
+                            <div className='w-[95px] h-[95px] md:w-[110px] md:h-[110px] mr-5 whyarena__image aspect-square flex items-center justify-center'>
+                                <img alt='icon' className='w-[60%]' src={item.icon}/>
                             </div>
-                            <div className='w-10/12 pl-4 py-2 pr-8 align-middle grid place-items-center'>
-                                <span className='m-auto block font-medium'>{item.text}</span>
+                            <div className='w-full m-auto'>
+                                <p className='m-auto block text-[0.8rem] md:text-base font-medium'>{item.text}</p>
                             </div>
                         </div>
                     ))}

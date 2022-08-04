@@ -23,7 +23,7 @@ function App() {
       <Banner />
       <Slide />
       <CallToAction />
-      {/* whyarena */}
+      <WhyArena />
       <Achieverments />
       <Instructors />
       {/* Addmission */}
