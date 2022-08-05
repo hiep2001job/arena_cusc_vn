@@ -6,7 +6,6 @@ import Icon_1 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-1.png';
 import Icon_2 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-2.png';
 import Icon_3 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-3.png';
 import Icon_4 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-4.png';
-import Stroke from '../shared/Stroke-double';
 
 const data = [
   { img: Icon_1, value: 25, title: 'năm kinh nghiệm' },
@@ -18,7 +17,7 @@ const data = [
 function Achievements() {
   return (
     <>
-      <div className="achievement" style={{ margin: 50 }}>
+      <div className="achievement px-5 xl:px-36">
         <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena</Title>
         <div className="achievement-content" style={styles.container}>
           <BrandItem />

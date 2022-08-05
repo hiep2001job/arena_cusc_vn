@@ -332,7 +332,7 @@ function Products() {
           sản phẩm tuyệt vời từ sinh viên
         </Description>
       </div>
-      <div className="tab mx-[50px]">
+      <div className="tab px-5 xl:px-36 ">
         {/* Header */}
         {/*  */}
         <div className="process-bar">
@@ -360,7 +360,7 @@ function Products() {
           </div>
         </div>
         {/* Content */}
-        <div className="tag-content mt-10 mx-8">
+        <div className="tag-content mt-10 mx-8 ">
           <div className="tag-content-item">
             <Slider {...settings}>
               {/* start slide image */}
