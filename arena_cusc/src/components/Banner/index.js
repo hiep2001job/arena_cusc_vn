@@ -7,7 +7,7 @@ import './banner.css';
 
 const Banner = () => {
   return (
-    <div className="w-screen relative z-[2]">
+    <div className="w-full relative z-[2]">
       {/* Background image */}
       <div className="w-full md:-translate-y-32">
         <img alt="banner" className="w-full" src={bannerImg} />

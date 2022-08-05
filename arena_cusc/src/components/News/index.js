@@ -54,7 +54,7 @@ var settings = {
       }
     },
     {
-      breakpoint: 500,
+      breakpoint: 550,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
@@ -64,12 +64,12 @@ var settings = {
 };
 const News = () => {
   return (
-    <div className="news-section w-screen mt-20 relative">
-      <Title className="text-center text-primary-color mt-10">Tin tức sự kiện</Title>
-      <Description className="mt-5  font-medium text-center">
+    <div className=" w-full overflow-hidden mt-20 relative">
+      <Title className="text-center text-[primary-color] mt-10">Tin tức sự kiện</Title>
+      <Description className="mt-5 relative px-5 xl:px-36 font-medium text-center">
         Hãy cùng theo bước CUSC ARENA khám phá những tin tức, sự kiện thú vị đang diễn ra
       </Description>
-      <Slider className="mt-10" {...settings}>
+      <Slider className="mt-10 w-full" {...settings}>
         {newsData.map((news, index) => (
           <div key={index} className="news-wrapper p-4 overflow-hidden  relative">
             <div className="rotate-wrapper relative cursor-pointer overflow-hidden  w-auto h-[20rem] rounded-3xl mx-auto ">
@@ -78,13 +78,12 @@ const News = () => {
                 <div className="news-img absolute  h-full w-auto scale-150 z-[-1]">
                   <img className="h-full object-cover bottom-0 left-0" src={news.image} />
                 </div>
-
                 <div
                   className="news-text relative w-full px-8 py-3 
                 grid items-center  text-[#000] text-lg 
-                bg-white bg-opacity-90  h-fit  rounded-3xl"
+                bg-white bg-opacity-90 h-fit  rounded-3xl text-justify"
                 >
-                  <span> {news.text}</span>
+                  <span > {news.text}</span>
                 </div>
               </div>
             </div>

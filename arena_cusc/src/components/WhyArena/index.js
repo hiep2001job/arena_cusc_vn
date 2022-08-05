@@ -17,7 +17,7 @@ const whyArenaData=[
 function WhyArena() {
     return (
         <>
-            <div className='w-screen'>
+            <div className='w-full'>
                 <h1 className="md:text-3xl font-bold uppercase text-center text-[#ed3237]">
                     Tại sao chọn Arena Multimedia - CUSC?
                 </h1>

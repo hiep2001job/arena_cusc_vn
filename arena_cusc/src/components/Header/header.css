@@ -36,7 +36,7 @@
 
 .outside-custom-border {
   width: inherit; 
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 
 .custom-border {
@@ -46,7 +46,7 @@
 .custom-border {
   width: inherit;
   transform: translate(0, -3px);
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 
 .behind-block {
@@ -55,7 +55,7 @@
 }
 
 .behind-block { 
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
 }
 
 .websitename-text-wrapper {
