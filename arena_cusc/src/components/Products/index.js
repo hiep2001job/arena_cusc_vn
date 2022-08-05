@@ -369,7 +369,7 @@ function Products() {
                   <div className="box h-[320px] rounded-[20px] m-[10px] overflow-hidden relative rounded-[20px] xl:h-[240px] lg:h-[200px] sm:h-[200px]">
                     <img
                       className="slide-img rounded-[20px] bg-[#fdf34e] w-full h-full"
-                      src={slide.img}
+                      src={`w-350${slide.img}`}
                       alt={slide.title}
                     />
                     <div className="overlay w-full h-full top-1/2 left-1/2 absolute translate-x-[-50%] translate-y-[-50%] rounded-[20px]">
