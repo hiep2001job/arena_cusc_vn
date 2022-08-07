@@ -3,13 +3,13 @@ function AdmissionInfo() {
     return (
         <>
             <div>
-                <hr className="absolute h-2 w-72 bg-[#ed3237] mt-16" />
-                <hr className="absolute h-2 w-72 bg-[#ed3237] mt-16 ml-[1078px]" />
-                <hr className="absolute bg-white border-[9px] border-solid border-[#ed3237] rounded-full h-14 w-14 ml-[268px] mt-[38px] shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"/>
-                <hr className="absolute bg-white border-[9px] border-solid border-[#ed3237] rounded-full h-14 w-14 ml-[1041px] mt-[38px] shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]" />
-                <div className="border-[2px] border-solid border-[#ed3237] rounded-[30px] w-[777px] m-auto shadow-[0px_3px_15px_4px_rgb(0,0,0,0.19)]">
-
-                    <h1 className="bg-[#ed3237] rounded-[25px] p-12 text-[30px] font-bold uppercase text-center text-white">
+                <hr className="absolute h-2 w-1/5 bg-[#ed3237] mt-16 hidden sm:block" />
+                <hr className="absolute h-2 w-1/5 bg-[#ed3237] mt-16 ml-[80%] hidden sm:block" />
+                <hr className="absolute hidden sm:block bg-white border-[9px] border-solid border-[#ed3237] rounded-full h-14 w-14 ml-[18%] lg:ml-[19%] mt-[38px] shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"/>
+                <hr className="absolute hidden sm:block bg-white border-[9px] border-solid border-[#ed3237] rounded-full h-14 w-14 ml-[76%] lg:ml-[77%] mt-[38px] shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]" />
+                
+                <div className="border-[2px] border-solid border-[#ed3237] rounded-[30px] w-7/12 m-auto shadow-[0px_3px_15px_4px_rgb(0,0,0,0.19)]">
+                    <h1 className="bg-[#ed3237] rounded-[25px] p-12 text-base xl:text-3xl sm:text-xl font-bold uppercase text-center text-white">
                         Thông tin tuyển sinh năm 2022
                     </h1>
                     <div className="m-[30px_45px] leading-8">
