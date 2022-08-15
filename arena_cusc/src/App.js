@@ -19,19 +19,21 @@ import Products from './components/Products/';
 function App() {
   return (
     <>
-      <Header />
-      <Banner />
-      <Slide />
-      <CallToAction />
-      <WhyArena />
-      <Achieverments />
-      <Instructors />
-      {/* Addmission */}
-      <GoodStudentExamples />
-      {/* Curriculum */}
-      <Products />
-      <News />
-      <Footer />
+      <div className="max-w-screen-2xl mx-auto min-w-[375px]">
+        <Header />
+        <Banner />
+        <Slide />
+        <CallToAction />
+        <WhyArena />
+        <Achieverments />
+        <Instructors />
+        {/* Addmission */}
+        <GoodStudentExamples />
+        <Curriculum />
+        <Products />
+        <News />
+        <Footer />
+      </div>
     </>
   );
 }
