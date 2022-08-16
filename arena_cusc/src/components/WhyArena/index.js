@@ -27,7 +27,7 @@ function WhyArena() {
   return (
     <>
       <div className="w-full">
-        <h1 className="md:text-3xl font-bold uppercase text-center text-[#ed3237]">
+        <h1 className="md:text-3xl font-bold uppercase text-center text-primary-color">
           Tại sao chọn Arena Multimedia - CUSC?
         </h1>
         <div className="mt-10 w-10/12 md:w-9/12 mx-auto grid grid-cols-2 gap-8 text-base">

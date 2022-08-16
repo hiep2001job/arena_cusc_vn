@@ -327,9 +327,9 @@ function Products() {
     <div id="products px-5 xl:px-36">
       <div className="text-center ">
         <Title className="text-primary-color my-8">sản phẩm nổi bật của sinh viên</Title>
-        <Description className="text-center px-5">
-          Sinh viên là niềm tự hào của chúng tôi. hãy cùng <span className="uppercase">cusc arena</span> khám phá các
-          sản phẩm tuyệt vời từ sinh viên
+        <Description className="flex justify-center text-center px-5">
+          Sinh viên là niềm tự hào của chúng tôi. hãy cùng <span className="uppercase">&nbsp;cusc arena&nbsp;</span>{' '}
+          khám phá các sản phẩm tuyệt vời từ sinh viên!
         </Description>
       </div>
       <div className="tab mx-[50px]">

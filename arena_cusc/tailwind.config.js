@@ -4,29 +4,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-color': 'var(--primary-color)',
+        'primary-color': '#ed2f34',
       },
       backgroundPosition: {
         'background-position--35': '-35px',
       },
     },
     screens: {
-      'sm': '640px',
+      sm: '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '845px',
+      md: '845px',
       // => @media (min-width: 845px) { ... }
 
-      'lg': '1024px',
+      lg: '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      xl: '1280px',
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
   },
   plugins: [],
 };

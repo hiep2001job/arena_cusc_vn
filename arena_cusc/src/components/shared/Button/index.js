@@ -7,7 +7,7 @@ function Button({ children, className, type }) {
   return (
     <>
       <button
-        className={`${className} ${btnStyle} bg-[#ed3237] text-white font-bold  uppercase rounded-full hover:shadow-[0_0_15px_#ed3238d4]`}
+        className={`${className} ${btnStyle} bg-primary-color text-white font-bold  uppercase rounded-full hover:shadow-[0_0_15px_#ed3238d4]`}
       >
         {children}
       </button>
