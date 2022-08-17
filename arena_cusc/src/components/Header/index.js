@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+
+
 import aptechLogo from '../../assets/images/Logo/logo_aptech.png';
 import dhctLogo from '../../assets/images/Logo/logo_ctu.png';
 import cuscLogo from '../../assets/images/Logo/logo_cusc.png';
@@ -9,6 +11,7 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
+<<<<<<< HEAD
   //Custom scrollpy
   var sections = {};
   var isScrolling;
@@ -73,6 +76,9 @@ const Header = () => {
       window.removeEventListener('scroll', observeMenu);
     };
   }, []);
+=======
+  
+>>>>>>> 1ade188 (fixed header banner style and fetch data)
 
   // Conditional class joining function
   const classNames = (...classes) => classes.filter(Boolean).join(' ');
