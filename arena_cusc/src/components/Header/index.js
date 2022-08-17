@@ -53,12 +53,10 @@ const Header = () => {
     };
   }, []);
 
-  // Screen state query
 
-  const onMobile = () => isMobile;
 
   return (
-    <header className={classNames('z-30 w-full', minimal ? 'fixed  bg-white' : 'relative bg-transparent')}>
+    <header className={classNames('z-30 w-full', minimal ? 'fixed  bg-white max-w-screen-2xl' : 'relative bg-transparent')}>
       <div className="w-full">
         {/* main section */}
         <div className={classNames('header-section md:px-5', !isMobile && minimal && 'lg:max-w-[85%] mx-auto')}>
