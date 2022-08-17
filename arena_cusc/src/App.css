@@ -1,1 +1,26 @@
+:root {
+  --primary-color: #ed2f34;
+}
+
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: yellow;        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid yellow;  /* creates padding around scroll thumb */
+}
 

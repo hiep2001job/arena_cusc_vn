@@ -1,0 +1,23 @@
+.customPaging {
+  width: 50px;
+  height: 6px;
+  border-radius: 14px;
+  border: 1px solid #b3b3b3;
+  background-color: white;
+}
+.slick-active .customPaging {
+  background-color: yellow;
+  border: 0px;
+}
+
+.slick-dots li {
+  margin: 0 20px !important;
+}
+
+.slick-slide {
+  position: relative;
+}
+
+.slick-list {
+  padding: 0px 0px !important;
+}

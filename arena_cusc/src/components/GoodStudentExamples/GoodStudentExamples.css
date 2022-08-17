@@ -1,17 +1,27 @@
-.goodstudent {
-    margin: 25px 150px;
+.sogan__body {
+  margin-top: auto;
+  margin-bottom: auto;
 }
-.goodstudent__color {
-    color: #ed3237;
+.sogan__body--description::before {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 26px;
+  position: relative;
+  top: 15px;
+  left: 8px;
+  z-index: 2;
+  background: url(../../assets/images/core/qt.png) no-repeat top left transparent;
 }
-.goodstudent__color2 {
-    color: #707070;
-}
-.goodstudent__border {
-    /* margin: 25px 250px; */
-    /* border: 1px solid #f0f0f0;
-    border-radius: 25px; */
-    height: 100px;
-    width: 600px;
-    margin: auto;
+
+.sogan__body--description::after {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 26px;
+  position: absolute;
+  z-index: 2;
+  bottom: 28px;
+  right: 5%;
+  background: url(../../assets/images/core/qt.png) no-repeat top right transparent;
 }

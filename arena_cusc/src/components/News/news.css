@@ -1,0 +1,31 @@
+.news-wrapper {
+  perspective: 30em;
+}
+.rotate-wrapper {
+  transform: rotateY(10deg) translateX(10px) ;
+}
+
+.news-img {
+  transition: all 0.5s ease-out;
+}
+.news-text {
+  transition: all 0.5s ease-out;
+}
+.news-overlay{
+    @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-0 h-0 bg-black rounded-3xl opacity-0;       
+    transition: all 0.5s ease-out;
+}
+.news-content:hover .news-text {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.news-content:hover .news-img {
+  transform: scale(1.0)  ;  
+}
+.news-content:hover .news-overlay{
+    @apply opacity-30 w-full h-full
+}
+
+.rotate-wrapper{
+   box-shadow:  1px 2px 6px 0px yellow;
+}
