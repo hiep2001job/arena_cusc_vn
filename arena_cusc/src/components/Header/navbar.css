@@ -177,6 +177,7 @@
     md:flex 
     md:justify-between 
     mt-6
+    md:pt-[10px]
     md:mx-auto 
     md:min-w-fit 
     md:max-w-[65%];

@@ -66,7 +66,7 @@ const News = () => {
   return (
     <div className=" w-full overflow-hidden mt-20 relative">
       <Title className="text-center text-[primary-color] mt-10">Tin tức sự kiện</Title>
-      <Description className="mt-5 relative px-5 xl:px-36 font-medium text-center">
+      <Description className="mt-5 relative px-5 xl:px-36 font-medium sm:text-center">
         Hãy cùng theo bước CUSC ARENA khám phá những tin tức, sự kiện thú vị đang diễn ra
       </Description>
       <Slider className="mt-10 w-full" {...settings}>
