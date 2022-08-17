@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+
+
 import aptechLogo from '../../assets/images/Logo/logo_aptech.png';
 import dhctLogo from '../../assets/images/Logo/logo_ctu.png';
 import cuscLogo from '../../assets/images/Logo/logo_cusc.png';
@@ -9,8 +11,11 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
+  
+
   // Conditional class joining function
   const classNames = (...classes) => classes.filter(Boolean).join(' ');
+
   // Navigation
   const [activeMenuItem, setActiveMenuItem] = useState('#trangchu');
   const menuItems = [
@@ -53,14 +58,15 @@ const Header = () => {
     };
   }, []);
 
-
-
   return (
-    <header className={classNames('z-30 w-full', minimal ? 'fixed  bg-white max-w-screen-2xl' : 'relative bg-transparent')}>
+    <header
+      className={classNames('z-30 w-full', minimal ? 'fixed  bg-white max-w-screen-2xl' : 'relative bg-transparent')}
+    >
       <div className="w-full">
         {/* main section */}
         <div className={classNames('header-section md:px-5', !isMobile && minimal && 'lg:max-w-[85%] mx-auto')}>
           {/* logo section on minimal state */}
+
           {!isMobile && minimal && (
             <div className="grow flex justify-center items-center">
               <div className="grow">
@@ -123,9 +129,9 @@ const Header = () => {
             {/* Website name section */}
             <div className={classNames('websitename-section hidden md:block')}>
               <div className="outside-custom-border">
-                <div className="custom-border ">
+                <div className="custom-border">
                   {/* Arena logo */}
-                  <div className="grow min-w-fit">
+                  <div className="grow min-w-fit  ">
                     <img className="h-6 md:h-10 w-auto lg:h-14 float-right" alt="logo" src={arenaLogo} />
                   </div>
                   {/* Text */}
@@ -147,7 +153,7 @@ const Header = () => {
 
           {/* Buger Icon for mobile menu toggle */}
           <div className="grow-[1]  top-[0] right-0 z-[50] md:hidden ">
-            <div id="menuToggle" className="my-auto  float-right pr-5">
+            <div id="menuToggle" className="my-auto -mt-2 float-right pr-3 sm:pr-5">
               <input
                 type="checkbox"
                 checked={open}
@@ -194,7 +200,7 @@ const Header = () => {
             className={classNames(
               isMobile ? 'menu' : 'transform-none',
               !isMobile && minimal ? 'navbar-list-minimal ' : '',
-              !isMobile && !minimal && 'md-menu mt-6 md:mt-3',
+              !isMobile && !minimal && 'md-menu mt-6 md:mt-6',
               isMobile && open ? 'transform-none' : '-translate-x-[100%]',
             )}
           >

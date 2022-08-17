@@ -1,16 +1,43 @@
-import React from 'react';
+import React ,{useEffect,useState} from 'react';
 
-import bannerImg from '../../assets/images/Banner/Banner_1.png';
-import sloganImg from '../../assets/images/Banner/Banner_2.png';
+import { apispreadsheets, imgFromDriveUrl } from '../shared/ApiSpreadSheets';
 
 import './banner.css';
 
+
 const Banner = () => {
+
+  const [isBannerLoading, setIsBannerLoading] = useState(true);
+  const [banner, setBanner] = useState("");
+
+  const [isSloganLoading, setIsSloganLoading] = useState(true);
+  const [slogan, setSlogan] = useState("");
+
+  //Get Data  
+  useEffect(() => {
+    fetch(`${apispreadsheets}/banners`)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setBanner(imgFromDriveUrl(result[0].hinh_anh));
+          setSlogan(imgFromDriveUrl(result[1].hinh_anh));   
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsBannerLoading(true)
+          setIsSloganLoading(true)
+        },
+      );
+  }, []);
+
   return (
     <div className="w-full relative z-[2]">
       {/* Background image */}
-      <div className="w-full md:-translate-y-32">
-        <img alt="banner" className="w-full" src={bannerImg} />
+      <div className="w-full md:-translate-y-40 md:min-h-[100vh]">
+        <img alt="banner" className={`w-full  ${isBannerLoading?'skeleton':''}`}  
+        onLoad={()=>setIsBannerLoading(false)} src={banner} />
       </div>
       {/* Banners */}
       <div
@@ -19,8 +46,8 @@ const Banner = () => {
       flex flex-col  "
       >
         {/* Slogan banner */}
-        <div className="grow hover-grow-up w-auto">
-          <img alt="slogan banner" src={sloganImg} />
+        <div className={`grow hover-grow-up w-auto ${isSloganLoading?'skeleton':''}`}>
+          <img alt="slogan banner" onLoad={()=>{setIsSloganLoading(false)}} src={slogan} />
         </div>
         {/* Register banner */}
         <div className=" grow-0 mt-10 w-auto">
