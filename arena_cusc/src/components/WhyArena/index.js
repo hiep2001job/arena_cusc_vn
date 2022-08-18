@@ -1,3 +1,5 @@
+import Description from '../shared/Description';
+
 import icon1 from '../../assets/images/Icon_tai_sao_chon_CUSC/1.jpg';
 import icon2 from '../../assets/images/Icon_tai_sao_chon_CUSC/4.jpg';
 import icon3 from '../../assets/images/Icon_tai_sao_chon_CUSC/2.jpg';
@@ -27,17 +29,17 @@ function WhyArena() {
   return (
     <>
       <div className="w-full">
-        <h1 className="md:text-3xl font-bold uppercase text-center text-primary-color">
+        <h1 className="md:text-3xl font-bold uppercase text-center text-primary-color my-10">
           Tại sao chọn Arena Multimedia - CUSC?
         </h1>
-        <div className="mt-10 w-10/12 md:w-9/12 mx-auto grid grid-cols-2 gap-8 text-base">
+        <div className="mb-20 w-[90%] mx-auto grid lg:grid-cols-2 md:grid grid-cols-1 gap-8 text-base">
           {whyArenaData.map((item, index) => (
             <div key={index} className="whyarena__border w-full col-span-2 md:col-span-1 flex">
               <div className="w-[95px] h-[95px] md:w-[110px] md:h-[110px] mr-5 whyarena__image aspect-square flex items-center justify-center">
                 <img alt="icon" className="w-[60%]" src={item.icon} />
               </div>
               <div className="w-full m-auto">
-                <p className="m-auto block text-[0.8rem] md:text-base font-medium">{item.text}</p>
+                <p className="m-auto block text-[0.8rem] md:text-base font-medium text-justify pr-4">{item.text}</p>
               </div>
             </div>
           ))}
