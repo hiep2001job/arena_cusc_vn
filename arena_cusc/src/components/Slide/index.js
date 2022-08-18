@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './Slide.css';
 
 import Description from '../shared/Description';
-import apispreadsheets from '../shared/ApiSpreadSheets';
+import { apispreadsheets, imgFromDriveUrl } from '../shared/ApiSpreadSheets';
 
 function Slide() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,7 +19,7 @@ function Slide() {
 
   useEffect(() => {
     const sheetName = 'slide';
-    fetch(`https://opensheet.elk.sh/${apispreadsheets}/${sheetName}`)
+    fetch(`${apispreadsheets}/${sheetName}`)
       .then((res) => res.json())
       .then(
         (results) => {
@@ -93,7 +93,7 @@ function Slide() {
       <div className="w-[100%] h-[900px] md:h-[1200px] relative mt-[-25%] md:mt-[-45%] z-[1]">
         <div
           className="w-[100%] bg-slide px-5 md:px-28 md:bg-[length:100%_100%]"
-          style={{ backgroundImage: `url(${isLoaded && images[currentImage].hinh_anh})` }}
+          style={{ backgroundImage: `url(${isLoaded && imgFromDriveUrl(images[currentImage].hinh_anh)})` }}
         >
           <div className="overlay-slide"></div>
           <div className="relative">
@@ -106,7 +106,7 @@ function Slide() {
           <Slider {...settings} className="mt-5 md:mt-0">
             {images.map((image, index) => (
               <div key={index} className="img-slide">
-                <img className="rounded-3xl" src={image.hinh_anh} alt={image.tieu_de} />
+                <img className="rounded-3xl" src={imgFromDriveUrl(image.hinh_anh)} alt={image.tieu_de} />
               </div>
             ))}
           </Slider>
