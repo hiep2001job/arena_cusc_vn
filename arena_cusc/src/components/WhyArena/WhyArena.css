@@ -7,8 +7,8 @@
     transform: scale(1.1);
 }
 .whyarena__border:hover {
-    border: 1px solid #fff664;
     border-radius: 15px;
+    box-shadow: 0 0 10px #fff664;
 }
 .whyarena__image {
     background-color: white;
