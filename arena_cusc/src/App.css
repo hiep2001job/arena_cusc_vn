@@ -10,7 +10,10 @@
       opacity: 1;
   }
 }
-
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 /* Scrollbar */
 body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
