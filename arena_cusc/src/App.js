@@ -21,18 +21,19 @@ function App() {
     <>
       <div className="max-w-screen-2xl mx-auto min-w-[375px]">
         <Header />
-        <Banner />
-        <Slide />
-        <CallToAction />
-        <WhyArena />
-        <Achieverments />
-        <Instructors />
+        {/* Wrap components in sections with id for scrollpy  */}
+        <section id="banner"><Banner /></section>
+        <section id="slide"><Slide /></section>
+        <section id="calltoaction"><CallToAction /></section>
+        <section id="whilearena"><WhyArena /></section>
+        <section id="achieverments"><Achieverments /></section>
+        <section id="instructors"><Instructors /></section>
         {/* Addmission */}
-        <GoodStudentExamples />
-        <Curriculum />
-        <Products />
-        <News />
-        <Footer />
+        <section id="goodstudent"><GoodStudentExamples /></section>
+        <section id="daotao"><Curriculum /></section>
+        <section id="products"><Products /></section>
+        <section id="tintuc"><News /></section>
+        <section id="footer"><Footer /></section>
       </div>
     </>
   );
