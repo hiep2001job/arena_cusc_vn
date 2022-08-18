@@ -23,8 +23,8 @@ function App() {
         <Header />
         {/* Wrap components in sections with id for scrollpy  */}
         <section id="banner"><Banner /></section>
-        <section id="gioithieu"><Slide /></section>
-        <section id="ghidanh"><CallToAction /></section>
+        <section id="slide"><Slide /></section>
+        <section id="calltoaction"><CallToAction /></section>
         <section id="whilearena"><WhyArena /></section>
         <section id="achieverments"><Achieverments /></section>
         <section id="instructors"><Instructors /></section>
