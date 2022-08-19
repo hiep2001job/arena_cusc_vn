@@ -13,6 +13,26 @@ const Header = () => {
   var sections = {};
   var isScrolling;
 
+  // Scroll to section via link
+  const scrollToSection = (link) => {
+    link = link.replace('#', '');
+    let position;
+    try {
+      if(link === 'trangchu'){
+        position=0;
+      }else{
+        position = document.getElementById(link).offsetTop - 70;
+      }      
+      window.scroll({
+        left: 0,
+        top: position,
+        behavior: 'smooth',
+      });
+    } catch (error) {
+      console.log('Section does not exist');
+    }
+  };
+  // Detect current menu item
   const observeMenu = () => {
     // Clear our timeout throughout the scroll
     window.clearTimeout(isScrolling);
@@ -28,6 +48,7 @@ const Header = () => {
         }
         return false;
       });
+
       changeActiveMenu(current);
     }, 300);
   };
@@ -46,7 +67,7 @@ const Header = () => {
     Array.prototype.forEach.call(section, function (e) {
       sections[e.id] = e.offsetTop;
     });
-    var isScrolling;
+
     window.addEventListener('scroll', observeMenu, false);
     return () => {
       window.removeEventListener('scroll', observeMenu);
@@ -267,7 +288,14 @@ const Header = () => {
 
             {/* Menu items */}
             {menuItems.map((item, index) => (
-              <li key={index} onClick={() => setActiveMenuItem(index)}>
+              <li
+                key={index}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveMenuItem(index);
+                  scrollToSection(item.link);
+                }}
+              >
                 <a href={`${item.link}`}>
                   <div
                     className={classNames(
