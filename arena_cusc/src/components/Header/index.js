@@ -11,7 +11,49 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
-  
+  //Custom scrollpy
+  var sections = {};
+  var isScrolling;
+
+  const observeMenu = () => {
+    // Clear our timeout throughout the scroll
+    window.clearTimeout(isScrolling);
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function () {
+      // Run the callback
+      var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      let current;
+      Object.keys(sections).every((key) => {
+        if (sections[key] <= scrollPosition) {
+          current = key;
+          return true;
+        }
+        return false;
+      });
+      changeActiveMenu(current);
+    }, 300);
+  };
+
+  const changeActiveMenu = (link) => {
+    menuItems.forEach((item, index) => {
+      if (`#${link}` === item.link) {
+        setActiveMenuItem(index);
+        console.log(`Change to ${index}`);
+      }
+    });
+  };
+
+  useEffect(() => {
+    var section = document.querySelectorAll('section');
+    Array.prototype.forEach.call(section, function (e) {
+      sections[e.id] = e.offsetTop;
+    });
+    var isScrolling;
+    window.addEventListener('scroll', observeMenu, false);
+    return () => {
+      window.removeEventListener('scroll', observeMenu);
+    };
+  }, []);
 
   // Conditional class joining function
   const classNames = (...classes) => classes.filter(Boolean).join(' ');
@@ -227,20 +269,21 @@ const Header = () => {
 
             {/* Menu items */}
             {menuItems.map((item, index) => (
-              <li key={index} onClick={() => setActiveMenuItem(item.link)}>
-                <div
-                  className={classNames(
-                    isMobile && item.link === activeMenuItem && 'menu-item-active', //mobile
-                    !isMobile &&
-                      minimal &&
-                      (item.link === activeMenuItem ? 'minimal-menu-item-active' : 'minimal-menu-item'), //minimal
-                    !isMobile &&
-                      !minimal &&
-                      (item.link === activeMenuItem ? 'md-menu-item-active text-center' : 'md-menu-item text-center'), //normal
-                  )}
-                >
-                  <span className={classNames(!isMobile && 'justify-center', 'flex')}>
-                    {/* {isMobile && (
+              <li key={index} onClick={() => setActiveMenuItem(index)}>
+                <a href={`${item.link}`}>
+                  <div
+                    className={classNames(
+                      isMobile && index === activeMenuItem && 'menu-item-active', //mobile
+                      !isMobile &&
+                        minimal &&
+                        (index === activeMenuItem ? 'minimal-menu-item-active' : 'minimal-menu-item'), //minimal
+                      !isMobile &&
+                        !minimal &&
+                        (index === activeMenuItem ? 'md-menu-item-active text-center' : 'md-menu-item text-center'), //normal
+                    )}
+                  >
+                    <span className={classNames(!isMobile && 'justify-center', 'flex')}>
+                      {/* {isMobile && (
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                       </svg>
