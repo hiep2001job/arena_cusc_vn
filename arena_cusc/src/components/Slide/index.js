@@ -11,9 +11,7 @@ import { apispreadsheets, imgFromDriveUrl } from '../shared/ApiSpreadSheets';
 function Slide() {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [images, setImages] = useState([]);
+  const [sheets, setSheets] = useState([]);
 
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -23,13 +21,11 @@ function Slide() {
       .then((res) => res.json())
       .then(
         (results) => {
+          setSheets(results);
           setIsLoaded(true);
-          setTitle(results[0].tieu_de);
-          setDescription(results[0].mo_ta);
-          setImages(results);
         },
         (error) => {
-          console.log('error: ', error);
+          // console.log('error: ', error);
           setIsLoaded(false);
         },
       );
@@ -63,50 +59,26 @@ function Slide() {
     ],
   };
 
-  // useEffect(() => {
-  //   const imgSlides = document.getElementsByClassName('img-slide');
-  //   const lengthImg = imgSlides.length / 3;
-
-  //   const left = currentImage - 1,
-  //     right = currentImage + 1;
-
-  //   // console.log('number - ', left);
-  //   // console.log('center', currentImage);
-  //   // console.log('number + ', right);
-
-  //   console.log(imgSlides[left + lengthImg]);
-  //   console.log(imgSlides[right + lengthImg]);
-  //   if (imgSlides[left + lengthImg] != undefined) {
-  //     console.log('left: ', imgSlides[left + lengthImg]);
-  //     console.log('center: ', imgSlides[currentImage]);
-  //     console.log('right: ', imgSlides[right + lengthImg]);
-
-  //     // imgSlides[left + lengthImg].style.filter = 'blur(10px)';
-  //     // imgSlides[currentImage + 1].style.filter = 'blur(nore)';
-  //     // imgSlides[right + lengthImg].style.filter = 'blur(10px)';
-  //   }
-  //   // imgSlides[left + lengthImg].style.filter = 'blur(10px)';
-  // });
-
   return (
     <>
       <div className="w-[100%] h-[900px] md:h-[1200px] relative mt-[-25%] md:mt-[-45%] z-[1]">
         <div
           className="w-[100%] bg-slide px-5 md:px-28 md:bg-[length:100%_100%]"
-          style={{ backgroundImage: `url(${isLoaded && imgFromDriveUrl(images[currentImage].hinh_anh)})` }}
+          style={{ backgroundImage: `url(${isLoaded && imgFromDriveUrl(sheets[currentImage].hinh_anh)})` }}
         >
+          <p>{isLoaded && imgFromDriveUrl(sheets[currentImage].hinh_anh)}</p>
           <div className="overlay-slide"></div>
           <div className="relative">
             <h1 className="md:text-3xl font-bold text-center uppercase text-[yellow] mt-40 md:mt-[14rem] lg:mt-[19rem] xl:mt-[28rem]">
-              {title}
+              {isLoaded && sheets[0].tieu_de}
             </h1>
-            <Description className="mt-5 text-white">{description}</Description>
+            <Description className="mt-5 text-white">{isLoaded && sheets[0].mo_ta}</Description>
           </div>
 
           <Slider {...settings} className="mt-5 md:mt-0">
-            {images.map((image, index) => (
+            {sheets.map((image, index) => (
               <div key={index} className="img-slide">
-                <img className="rounded-3xl" src={imgFromDriveUrl(image.hinh_anh)} alt={image.tieu_de} />
+                <img className="rounded-3xl" src={isLoaded && imgFromDriveUrl(image.hinh_anh)} alt={image.tieu_de} />
               </div>
             ))}
           </Slider>

@@ -4,8 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-position-y: 46%;
-  background-position-x: center;
+  background-position-y: 44%;
 }
 
 .menu-active {
@@ -22,9 +21,6 @@
   border-bottom: 3px solid #ff0000;
 }
 
-/* .bg-curriculumDetail {
-  background-size: 780px;
-} */
 .effect-curriculumDetail {
   transition: 1s;
 }
