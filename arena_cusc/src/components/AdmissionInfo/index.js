@@ -45,9 +45,9 @@ function AdmissionInfo() {
       <div className="mt-2 mb-20 md:border-t-8 md:border-solid md:border-primary-color sm:border-none">
         <div className="mt-3 flex w-full">
           <div className="lg:w-[25%] md:w-[10%]  flex justify-end">
-            <div className="md:block sm:hidden mt-[-43px] mr-[-28px] absolute bg-white border-[9px] border-solid border-primary-color rounded-full h-14 w-14 shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"></div>
+            <div className="admission-left-cirle md:block sm:hidden mt-[-43px] mr-[-28px] absolute bg-white border-[9px] border-solid border-primary-color rounded-full h-14 w-14 shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"></div>
           </div>
-          <div className="md:mt-[-83px] md:m-0 md:w-[80%] sm:m-[2%] sm:w-full lg:w-[50%] border-2 border-primary-color rounded-[28px] shadow-[0px_3px_15px_4px_rgb(0,0,0,0.19)]">
+          <div className="admission-card md:mt-[-83px] md:m-0 md:w-[80%] sm:m-[2%] sm:w-full lg:w-[50%] border-2 border-primary-color rounded-[28px] shadow-[0px_3px_15px_4px_rgb(0,0,0,0.19)]">
             <h1 className="bg-primary-color rounded-[25px] p-12 text-[30px] font-bold uppercase text-center text-white">
               Thông tin tuyển sinh năm 2022
             </h1>
@@ -81,7 +81,7 @@ function AdmissionInfo() {
             </ul>
           </div>
           <div className="lg:w-[25%] md:w-[10%] flex">
-            <div className="md:block sm:hidden mt-[-43px] ml-[-28px] absolute bg-white border-[9px] border-solid border-primary-color rounded-full h-14 w-14  shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"></div>
+            <div className="admission-right-cirle md:block sm:hidden mt-[-43px] ml-[-28px] absolute bg-white border-[9px] border-solid border-primary-color rounded-full h-14 w-14  shadow-[0px_0px_10px_2px_rgb(0,0,0,0.13)]"></div>
           </div>
         </div>
       </div>

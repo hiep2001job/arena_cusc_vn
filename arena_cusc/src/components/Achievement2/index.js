@@ -6,7 +6,6 @@ import Icon_1 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-1.png';
 import Icon_2 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-2.png';
 import Icon_3 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-3.png';
 import Icon_4 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-4.png';
-import Stroke from '../shared/Stroke-double';
 
 const data = [
   { img: Icon_1, value: 25, title: 'năm kinh nghiệm' },
@@ -18,9 +17,9 @@ const data = [
 function Achievements() {
   return (
     <>
-      <div className="achievement px-5 xl:px-36" style={{ margin: 50 }}>
+      <div className="achievement px-5 xl:px-36 mb-20">
         <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena</Title>
-        <div className="achievement-content" style={styles.container}>
+        <div className="achievement-content flex border-b-4 border-b-primary-color items-stretch ">
           <BrandItem />
           {data.map((val, idx) => (
             <Highlighttem key={`highlight-key-${idx}`} {...val} />
@@ -33,179 +32,36 @@ function Achievements() {
 
 const BrandItem = () => {
   return (
-    <div className="achievement-box brand-img" style={styles.brand}>
+    <div className="achievement-box brand-img flex items-center w-[20%]">
       <img src={BrandImg} alt="brand-img" />
     </div>
   );
 };
 // Highlighttem
 const Highlighttem = ({ img, value, title }) => {
-  const [width, setWidth] = React.useState(imageSize);
-  const ref = React.useRef(null);
-  React.useEffect(() => {
-    if (ref?.current?.clientWidth) {
-      setWidth(ref?.current?.clientWidth / 2);
-    }
-  }, [ref.current]);
-
   return (
     // Highlighttem content
-    <div className="achievement-box " style={styles.highlight.box} ref={ref}>
-      <div className="achievement-box-container" style={styles.highlight.container} ref={ref}>
-        <div
-          className="header"
-          style={{
-            ...styles.highlight.header.container,
-            height: width / 2,
-          }}
-        >
-          <img
-            className="header-image"
-            src={img}
-            alt="highlight-img"
-            style={{
-              ...styles.highlight.header.icon,
-              width: width,
-              height: width,
-            }}
-          />
+    <div className="achievement-box w-[20%] pl-5">
+      <div className="achievement-box-container flex items-stretch flex-col relative h-full">
+        <div className="header flex justify-center relative w-full h-16">
+          <img className="header-image absolute h-32 w-32" src={img} alt="highlight-img" />
         </div>
-        <div
-          className="content"
-          style={{
-            ...styles.highlight.content.container,
-            paddingTop: width / 2,
-            height: `calc(100% - ${(width + footerHeight) / 2}px)`,
-          }}
-        >
-          <div className="number" style={styles.highlight.content.value}>
+        <div className="content flex justify-center items-center flex-col w-full h-[73%] border-2 border-[#fff212] rounded-[10px] pt-16 pb-5 px-3.5 shadow-[0_0_10px_0px_#adb5bd]">
+          <div className="number sm:text-3xl  font-bold uppercase text-primary-color">
             {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
           </div>
-          <div className="titile" style={styles.highlight.content.title}>
-            {title?.toUpperCase()}
-          </div>
+          <div className="titile sm:text-xl font-bold uppercase text-center">{title}</div>
         </div>
         {/* footer */}
-        <div className="footer" style={styles.highlight.footer.container}>
-          <div className="circle-top" style={styles.highlight.footer.circleTop}></div>
-          <div className="center-line" style={styles.highlight.footer.centerLine}></div>
-          <div
-            className="circle-bottom absolute translate-x-[0] translate-y-[263%]"
-            style={styles.highlight.footer.circleBottom}
-          ></div>
-          <div
-            className="circle-bottom-outline absolute translate-x-[0] translate-y-[263%]"
-            style={styles.highlight.footer.circleBottom}
-          ></div>
+        <div className="footer flex justify-center h-[90px] relative">
+          <div className="circle-top w-[40px] h-[40px] border-[3px] border-primary-color rounded-full bg-white translate-y-[-50%] absolute"></div>
+          <div className="center-line h-full w-[3px] bg-primary-color"></div>
+          <div className="circle-bottom absolute translate-x-[0] translate-y-[263%] w-[25px] h-[25px] border-[3px] border-primary-color rounded-full bg-white"></div>
+          <div className="circle-bottom-outline absolute translate-x-[0] translate-y-[263%] w-[25px] h-[25px] border-[3px] border-primary-color rounded-full bg-white"></div>
         </div>
       </div>
     </div>
   );
-};
-
-const imageSize = 120;
-const circleTopSize = 40;
-const circleBottomSize = 25;
-const footerHeight = 90;
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexFlow: 'row wrap',
-    alignItems: 'stretch',
-    borderBottom: '4px solid red',
-  },
-  brand: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '20%',
-  },
-  highlight: {
-    box: {
-      width: '20%',
-      paddingLeft: 20,
-    },
-    container: {
-      display: 'flex',
-      alignItems: 'stretch',
-      flexDirection: 'column',
-      position: 'relative',
-      height: '100%',
-    },
-    header: {
-      container: {
-        display: 'flex',
-        justifyContent: 'center',
-        position: 'relative',
-        height: imageSize / 2,
-        width: '100%',
-      },
-      icon: {
-        position: 'absolute',
-        height: imageSize,
-        width: imageSize,
-      },
-    },
-    content: {
-      container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        width: '100%',
-        height: `calc(100% - ${(imageSize + footerHeight) / 2}px)`,
-        borderWidth: 2,
-        borderColor: '#fff212',
-        borderRadius: 10,
-        paddingTop: imageSize / 2 + 10,
-        paddingBottom: circleTopSize / 2 + 5,
-        paddingLeft: 15,
-        paddingRight: 15,
-        boxShadow: '0px 0px 10px #adb5bd',
-      },
-      value: {
-        fontSize: '2.8rem',
-        color: 'red',
-        fontWeight: 700,
-      },
-      title: {
-        fontSize: '1.4rem',
-        fontWeight: 700,
-        textAlign: 'center',
-      },
-    },
-    footer: {
-      container: {
-        display: 'flex',
-        justifyContent: 'center',
-        height: footerHeight,
-        position: 'relative',
-      },
-      circleTop: {
-        width: circleTopSize,
-        height: circleTopSize,
-        borderWidth: 3,
-        borderColor: 'red',
-        borderRadius: '50%',
-        position: 'absolute',
-        backgroundColor: 'white',
-        transform: 'translate(0, -50%)',
-      },
-      centerLine: {
-        height: '100%',
-        width: 3,
-        backgroundColor: 'red',
-      },
-      circleBottom: {
-        width: circleBottomSize,
-        height: circleBottomSize,
-        borderWidth: 3,
-        borderColor: 'red',
-        borderRadius: '50%',
-        backgroundColor: 'white',
-      },
-    },
-  },
 };
 
 export default Achievements;
