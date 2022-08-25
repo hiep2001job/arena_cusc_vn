@@ -9,6 +9,7 @@ import Description from '../shared/Description';
 import { apispreadsheets, imgFromDriveUrl } from '../shared/ApiSpreadSheets';
 
 function Slide() {
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const [sheets, setSheets] = useState([]);
@@ -25,8 +26,8 @@ function Slide() {
           setIsLoaded(true);
         },
         (error) => {
-          // console.log('error: ', error);
-          setIsLoaded(false);
+          setIsLoaded(true);
+          setError(error);
         },
       );
   }, []);
@@ -59,33 +60,38 @@ function Slide() {
     ],
   };
 
-  return (
-    <>
-      <div className="w-[100%] h-[900px] md:h-[1200px] relative mt-[-25%] md:mt-[-45%] z-[1]">
-        <div
-          className="w-[100%] bg-slide px-5 md:px-28 md:bg-[length:100%_100%]"
-          style={{ backgroundImage: `url(${isLoaded && imgFromDriveUrl(sheets[currentImage].hinh_anh)})` }}
-        >
-          <p>{isLoaded && imgFromDriveUrl(sheets[currentImage].hinh_anh)}</p>
-          <div className="overlay-slide"></div>
-          <div className="relative">
-            <h1 className="md:text-3xl font-bold text-center uppercase text-[yellow] mt-40 md:mt-[14rem] lg:mt-[19rem] xl:mt-[28rem]">
-              {isLoaded && sheets[0].tieu_de}
-            </h1>
-            <Description className="mt-5 text-white">{isLoaded && sheets[0].mo_ta}</Description>
-          </div>
+  if (error) {
+    return <div>Error: not found</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <>
+        <div className="w-[100%] h-[900px] md:h-[1200px] relative mt-[-25%] md:mt-[-45%] z-[1]">
+          <div
+            className="w-[100%] bg-slide px-5 md:px-28 md:bg-[length:100%_100%]"
+            style={{ backgroundImage: `url(${imgFromDriveUrl(sheets[currentImage].hinh_anh)})` }}
+          >
+            <div className="overlay-slide"></div>
+            <div className="relative">
+              <h1 className="md:text-3xl font-bold text-center uppercase text-[yellow] mt-40 md:mt-[14rem] lg:mt-[19rem] xl:mt-[28rem]">
+                {sheets[0].tieu_de}
+              </h1>
+              <Description className="mt-5 text-white">{sheets[0].mo_ta}</Description>
+            </div>
 
-          <Slider {...settings} className="mt-5 md:mt-0">
-            {sheets.map((image, index) => (
-              <div key={index} className="img-slide">
-                <img className="rounded-3xl" src={isLoaded && imgFromDriveUrl(image.hinh_anh)} alt={image.tieu_de} />
-              </div>
-            ))}
-          </Slider>
+            <Slider {...settings} className="mt-5 md:mt-0">
+              {sheets.map((image, index) => (
+                <div key={index} className="img-slide">
+                  <img className="rounded-3xl" src={imgFromDriveUrl(image.hinh_anh)} alt={image.tieu_de} />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default Slide;
