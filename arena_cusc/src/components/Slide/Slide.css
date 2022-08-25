@@ -16,7 +16,6 @@
   background-position-x: center;
   background-size: cover;
   transition: 2s;
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--eerie-black)); */
 }
 
 .overlay-slide {

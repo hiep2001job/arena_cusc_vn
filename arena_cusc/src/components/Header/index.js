@@ -9,10 +9,76 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
+  //Custom scrollpy
+  var sections = {};
+  var isScrolling;
+
+  // Scroll to section via link
+  const scrollToSection = (link) => {
+    link = link.replace('#', '');
+    let position;
+    try {
+      if(link === 'trangchu'){
+        position=0;
+      }else{
+        position = document.getElementById(link).offsetTop - 70;
+      }      
+      window.scroll({
+        left: 0,
+        top: position,
+        behavior: 'smooth',
+      });
+    } catch (error) {
+      console.log('Section does not exist');
+    }
+  };
+  // Detect current menu item
+  const observeMenu = () => {
+    // Clear our timeout throughout the scroll
+    window.clearTimeout(isScrolling);
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function () {
+      // Run the callback
+      var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      let current;
+      Object.keys(sections).every((key) => {
+        if (sections[key] <= scrollPosition) {
+          current = key;
+          return true;
+        }
+        return false;
+      });
+
+      changeActiveMenu(current);
+    }, 300);
+  };
+
+  const changeActiveMenu = (link) => {
+    menuItems.forEach((item, index) => {
+      if (`#${link}` === item.link) {
+        setActiveMenuItem(index);
+        console.log(`Change to ${index}`);
+      }
+    });
+  };
+
+  useEffect(() => {
+    var section = document.querySelectorAll('section');
+    Array.prototype.forEach.call(section, function (e) {
+      sections[e.id] = e.offsetTop;
+    });
+
+    window.addEventListener('scroll', observeMenu, false);
+    return () => {
+      window.removeEventListener('scroll', observeMenu);
+    };
+  }, []);
+
   // Conditional class joining function
   const classNames = (...classes) => classes.filter(Boolean).join(' ');
+
   // Navigation
-  const [activeMenuItem, setActiveMenuItem] = useState('#trangchu');
+  const [activeMenuItem, setActiveMenuItem] = useState(0);
   const menuItems = [
     { name: 'Trang chủ', link: '#trangchu' },
     { name: 'Giới thiệu', link: '#gioithieu' },
@@ -22,6 +88,7 @@ const Header = () => {
     { name: 'Ghi danh', link: '#ghidanh' },
     { name: 'Tin tức', link: '#tintuc' },
   ];
+
   // Mobile header navbar
 
   const [open, setOpen] = useState(false);
@@ -37,7 +104,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', isMobileController);
     };
-  });
+  }, []);
 
   //Minial Header
   const [minimal, setMinimal] = useState(false);
@@ -53,16 +120,15 @@ const Header = () => {
     };
   }, []);
 
-  // Screen state query
-
-  const onMobile = () => isMobile;
-
   return (
-    <header className={classNames('z-30 w-full', minimal ? 'fixed  bg-white' : 'relative bg-transparent')}>
+    <header
+      className={classNames('z-30 w-full', minimal ? 'fixed  bg-white max-w-screen-2xl' : 'relative bg-transparent')}
+    >
       <div className="w-full">
         {/* main section */}
         <div className={classNames('header-section md:px-5', !isMobile && minimal && 'lg:max-w-[85%] mx-auto')}>
           {/* logo section on minimal state */}
+
           {!isMobile && minimal && (
             <div className="grow flex justify-center items-center">
               <div className="grow">
@@ -125,9 +191,9 @@ const Header = () => {
             {/* Website name section */}
             <div className={classNames('websitename-section hidden md:block')}>
               <div className="outside-custom-border">
-                <div className="custom-border ">
+                <div className="custom-border">
                   {/* Arena logo */}
-                  <div className="grow min-w-fit">
+                  <div className="grow min-w-fit  ">
                     <img className="h-6 md:h-10 w-auto lg:h-14 float-right" alt="logo" src={arenaLogo} />
                   </div>
                   {/* Text */}
@@ -149,7 +215,7 @@ const Header = () => {
 
           {/* Buger Icon for mobile menu toggle */}
           <div className="grow-[1]  top-[0] right-0 z-[50] md:hidden ">
-            <div id="menuToggle" className="my-auto  float-right pr-5">
+            <div id="menuToggle" className="my-auto -mt-2 float-right pr-3 sm:pr-5">
               <input
                 type="checkbox"
                 checked={open}
@@ -190,13 +256,12 @@ const Header = () => {
         </div>
 
         {/* navbar section */}
-        {/* Overlay when mobile menu displayed */}
         <div className={classNames('w-full', minimal && !isMobile ? 'navbar-wrapper-minimal' : '')}>
           <ul
             className={classNames(
               isMobile ? 'menu' : 'transform-none',
               !isMobile && minimal ? 'navbar-list-minimal ' : '',
-              !isMobile && !minimal && 'md-menu mt-6 md:mt-3',
+              !isMobile && !minimal && 'md-menu mt-6 md:mt-6',
               isMobile && open ? 'transform-none' : '-translate-x-[100%]',
             )}
           >
@@ -223,27 +288,36 @@ const Header = () => {
 
             {/* Menu items */}
             {menuItems.map((item, index) => (
-              <li key={index} onClick={() => setActiveMenuItem(item.link)}>
-                <div
-                  className={classNames(
-                    isMobile && item.link === activeMenuItem && 'menu-item-active', //mobile
-                    !isMobile &&
-                      minimal &&
-                      (item.link === activeMenuItem ? 'minimal-menu-item-active' : 'minimal-menu-item'), //minimal
-                    !isMobile &&
-                      !minimal &&
-                      (item.link === activeMenuItem ? 'md-menu-item-active text-center' : 'md-menu-item text-center'), //normal
-                  )}
-                >
-                  <span className={classNames(!isMobile && 'justify-center', 'flex')}>
-                    {/* {isMobile && (
+              <li
+                key={index}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveMenuItem(index);
+                  scrollToSection(item.link);
+                }}
+              >
+                <a href={`${item.link}`}>
+                  <div
+                    className={classNames(
+                      isMobile && index === activeMenuItem && 'menu-item-active', //mobile
+                      !isMobile &&
+                        minimal &&
+                        (index === activeMenuItem ? 'minimal-menu-item-active' : 'minimal-menu-item'), //minimal
+                      !isMobile &&
+                        !minimal &&
+                        (index === activeMenuItem ? 'md-menu-item-active text-center' : 'md-menu-item text-center'), //normal
+                    )}
+                  >
+                    <span className={classNames(!isMobile && 'justify-center', 'flex')}>
+                      {/* {isMobile && (
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                       </svg>
                     )} */}
-                    {item.name}
-                  </span>
-                </div>
+                      {item.name}
+                    </span>
+                  </div>
+                </a>
               </li>
             ))}
 

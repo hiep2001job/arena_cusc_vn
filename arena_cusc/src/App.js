@@ -27,7 +27,7 @@ function App() {
         <WhyArena />
         <Achieverments />
         <Instructors />
-        <AdmissionInfo />
+        {/* Addmission */}
         <GoodStudentExamples />
         <Curriculum />
         <Products />
