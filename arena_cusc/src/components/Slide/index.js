@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllSlide, getNextImage } from '../../actions/slide';
+import { GET_ALL_SLIDE, GET_NEXT_IMAGE } from '../../actions/slide';
 import slideApi from '../../api/slide';
 
 import Slider from 'react-slick';
@@ -26,7 +26,7 @@ function Slide() {
       try {
         const response = await slideApi.getAll();
         const action = {
-          type: getAllSlide(),
+          type: GET_ALL_SLIDE,
           payload: { sheets: response },
         };
 
@@ -39,7 +39,7 @@ function Slide() {
 
   const handleChangeImage = (next) => {
     const action = {
-      type: getNextImage(),
+      type: GET_NEXT_IMAGE,
       payload: { nextImage: next },
     };
 
