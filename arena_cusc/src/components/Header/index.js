@@ -9,20 +9,19 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
-  //Custom scrollpy
+  //Custom scrollpy begin
   var sections = {};
   var isScrolling;
-
   // Scroll to section via link
   const scrollToSection = (link) => {
     link = link.replace('#', '');
     let position;
     try {
-      if(link === 'trangchu'){
-        position=0;
-      }else{
+      if (link === 'trangchu') {
+        position = 0;
+      } else {
         position = document.getElementById(link).offsetTop - 70;
-      }      
+      }
       window.scroll({
         left: 0,
         top: position,
@@ -61,11 +60,13 @@ const Header = () => {
       }
     });
   };
+  // Custom scrolly end
 
   useEffect(() => {
     var section = document.querySelectorAll('section');
-    Array.prototype.forEach.call(section, function (e) {
-      sections[e.id] = e.offsetTop;
+    
+    section.forEach(sec => {
+      sections[sec.id] = sec.offsetTop;
     });
 
     window.addEventListener('scroll', observeMenu, false);
