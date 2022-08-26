@@ -151,37 +151,43 @@ function Curriculum() {
                 >
                   {(close) => (
                     <ContentModal
-                      title={isLoaded && sheets[0].thoi_gian_dao_tao}
                       content={
                         <>
                           {/* Begin Tab Menu */}
-                          <div className="w-full">
-                            <div className="flex sm:max-w-[70%] px-5 text-[#b7b7b7] font-bold mt-4 justify-between mx-auto cursor-pointer">
-                              {sheets.map((data, index) => (
-                                <div
-                                  key={index}
-                                  className={`mr-3 md:mr-6 min-w-fit ${
-                                    menuCurrent == index ? 'menu-active-detail' : ''
-                                  }`}
-                                  onClick={() => handleGetDataCuriculum(index)}
-                                >
-                                  {data.hoc_ky}
-                                </div>
-                              ))}
-                            </div>
-                            {/* End Tab Menu */}
+                          {/* Title */}
+                          <div className="header p-4 text-lg font-bold uppercase text-center shadow-[0px_0px_12px_rgba(0,0,0,0.1)] rounded-[25px]">
+                            {isLoaded && sheets[0].thoi_gian_dao_tao}
+                          </div>
+                          {/* Content */}
+                          <div className="content">
+                            <div className="w-full">
+                              <div className="flex sm:max-w-[70%] px-5 text-[#b7b7b7] font-bold mt-4 justify-between mx-auto cursor-pointer">
+                                {sheets.map((data, index) => (
+                                  <div
+                                    key={index}
+                                    className={`mr-3 md:mr-6 min-w-fit ${
+                                      menuCurrent == index ? 'menu-active-detail' : ''
+                                    }`}
+                                    onClick={() => handleGetDataCuriculum(index)}
+                                  >
+                                    {data.hoc_ky}
+                                  </div>
+                                ))}
+                              </div>
+                              {/* End Tab Menu */}
 
-                            <div className="mt-4 mx-5 md:mx-10 scroll-box">
-                              <img
-                                className="w-[100%]"
-                                src={isLoaded && imgFromDriveUrl(sheets[menuCurrent].anh_minh_hoa_cho_hoc_ky)}
-                              />
-                              <p className="mt-3 text-sm text-black">
-                                <Markup
-                                  allowAttributes
-                                  content={isLoaded && sheets[menuCurrent].chuong_trinh_dao_tao_chi_tiet}
+                              <div className="mt-4 mx-5 md:mx-10 scroll-box">
+                                <img
+                                  className="w-[100%]"
+                                  src={isLoaded && imgFromDriveUrl(sheets[menuCurrent].anh_minh_hoa_cho_hoc_ky)}
                                 />
-                              </p>
+                                <p className="mt-3 text-sm text-black">
+                                  <Markup
+                                    allowAttributes
+                                    content={isLoaded && sheets[menuCurrent].chuong_trinh_dao_tao_chi_tiet}
+                                  />
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </>
