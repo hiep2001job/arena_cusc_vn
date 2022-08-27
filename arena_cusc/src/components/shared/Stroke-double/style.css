@@ -1,0 +1,12 @@
+.circle {
+    aspect-ratio: 1;
+    margin-right: 10;
+    margin-top: 10;
+    margin-bottom: 10;
+    visibility: hidden;
+}
+
+.stroke-content:hover .circle {
+    visibility: visible;
+    animation: fade 1s;
+}

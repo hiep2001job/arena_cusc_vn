@@ -6,7 +6,7 @@ import CallToAction from './components/CallToAction';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Curriculum from './components/Curriculum';
+// import Curriculum from './components/Curriculum';
 import GoodStudentExamples from './components/GoodStudentExamples';
 import Instructors from './components/Instructors';
 import News from './components/News';
@@ -16,7 +16,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import WhyArena from './components/WhyArena';
 import AdmissionInfo from './components/AdmissionInfo';
-import GoodStudentExamples from './components/GoodStudentExamples';
+// import GoodStudentExamples from './components/GoodStudentExamples';
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
       {/* <h1>OK</h1>
       {/* <AdmissionInfo/> */}
       {/* <GoodStudentExamples/> */}
-      <div className='bg-red-500'>content ne</div>
+      {/* <div className='bg-red-500'>content ne</div> */}
       <Footer/>
       {/* <h1>OK</h1> */}
     </>
