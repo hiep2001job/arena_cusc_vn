@@ -1,9 +1,9 @@
 import './CustomPaging.css';
 
-function CustomPaging() {
+function CustomPaging({ onClick }) {
   return (
     <>
-      <div className="customPaging"></div>
+      <div className="customPaging" onClick={onClick}></div>
     </>
   );
 }
