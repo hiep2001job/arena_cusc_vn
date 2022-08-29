@@ -1,64 +1,75 @@
 /* tab process bar */
 
 .process-bar ul li::after {
-  cursor: pointer;
-  content: ' ';
-  display: block;
-  width: 25px;
-  height: 25px;
-  background: #fff;
-  margin: auto;
-  border: solid 3px var(--primary-color);
-  border-radius: 50%;
-  margin-top: 76px;
+    cursor: pointer;
+    content: ' ';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    margin: auto;
+    border: solid 3px var(--primary-color);
+    border-radius: 50%;
+    margin-top: 23px;
 }
 
 .process-bar ul li.active::after {
-  background: var(--primary-color);
-  outline: solid;
-  outline-width: 3px;
-  outline-color: var(--primary-color);
-  outline-offset: 10px;
-  /* transition: outline-width ease 0.5s; */
-  transition: outline-offset 0.3s;
+    background: var(--primary-color);
+    outline: solid;
+    outline-width: 3px;
+    outline-color: var(--primary-color);
+    outline-offset: 10px;
+    /* transition: outline-width ease 0.5s; */
+    transition: outline-offset 0.3s;
 }
+
 
 /* tab content */
 
 .tab-content .tab-content-item .box .slide-img {
-  transition: transform 1s, filter 2s ease-in-out;
-  transform: scale(1.2);
-  object-fit: cover;
-  width: 100%;
-  box-sizing: border-box;
+    transition: transform 1s, filter 2s ease-in-out;
+    transform: scale(1.2);
+    object-fit: cover;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tab-content .tab-content-item .box .overlay {
-  background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
-  visibility: hidden;
-  display: flex;
-  align-items: center;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+    visibility: hidden;
+    display: flex;
+    align-items: center;
 }
 
-/* .tab-content .tab-content-item .box .overlay h3,
-.tab-content .tab-content-item .box .overlay p {
-    color: #fdf34e;
-} */
-
 .tab-content .tab-content-item .box:hover .product-slide-img {
-  padding: 1.5%;
-  transform: scale(1);
-  transition: all ease-in 0.3s;
+    padding: 1.5%;
+    transform: scale(1);
+    transition: all ease-in 0.3s;
 }
 
 .tab-content .tab-content-item .box:hover .overlay {
-  visibility: visible;
-  animation: fade 1s;
+    visibility: visible;
+    animation: fade 1s;
 }
+
 
 /* responsive */
 
-@media (max-width: 844px) {
+@media (max-width: 845px) {
+    .process-bar ul li::after {
+        display: none;
+    }
+    .process-bar ul li.active {
+        color: #fff;
+        background: var(--primary-color);
+        border-radius: 15px;
+        /* box-shadow: 0 0 10px #000; */
+        transition: all 1s;
+    }
+}
+
+
+/* @media (max-width: 844px) {
   .process-bar ul li::after {
     display: none;
   }
@@ -120,4 +131,4 @@
     height: 200px;
     object-fit: cover;
   }
-}
+} */
