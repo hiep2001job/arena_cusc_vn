@@ -24,11 +24,12 @@ function App() {
       <Header />
       <Banner />
       <Slide />
-      <CallToAction/>
-      <Instructors/>
-      <GoodStudentExamples /> 
-      <News/>
- 
+      <CallToAction />
+      <Instructors />
+      <AdmissionInfo />
+      <GoodStudentExamples />
+      <News />
+
       {/* <Header/>
       <Banner/>      
       <Slide /> */}
@@ -37,7 +38,7 @@ function App() {
       {/* <AdmissionInfo/> */}
       {/* <GoodStudentExamples/> */}
       {/* <div className='bg-red-500'>content ne</div> */}
-      <Footer/>
+      <Footer />
       {/* <h1>OK</h1> */}
     </>
   );
