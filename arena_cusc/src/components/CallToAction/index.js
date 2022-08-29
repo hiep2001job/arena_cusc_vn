@@ -7,15 +7,20 @@ function CallToAction() {
   return (
     <>
       <div
-        className="relative w-full h-[300px] md:h-[450px] lg:h-[500px] xl:h-[620px] mb-20 mt-[-100px] bg-callToAction z-[2]"
+        className="relative w-full h-[300px] md:h-[450px] lg:h-[500px] xl:h-[700px] mb-20 mt-[-100px] bg-callToAction z-[2]"
         style={{ backgroundImage: `url(${personBackground})` }}
       >
-        <div className="absolute w-full mt-52 text-center">
-          <Title>Hành trang kỹ năng tương lai!</Title>
-          <Button className="mt-5 md:mt-12">Đăng ký ngay</Button>
+        <div className="absolute w-full mt-32 md:mt-64 mb-32 text-center">
+          <Title className="mt-5 bg-white md:bg-transparent">Hành trang kỹ năng tương lai!</Title>
+          <Button
+            target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScfscLTsI6ZxA7hHuOEgMjUOl5eo9eOXsbzAD6TSRauhdhBwA/viewform"
+            className="my-5 md:mt-12"
+          >
+            Đăng ký ngay
+          </Button>
         </div>
       </div>
-      {/* <div className="loader"></div> */}
     </>
   );
 }

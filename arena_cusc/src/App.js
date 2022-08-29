@@ -28,11 +28,21 @@ function App() {
         <Achieverments />
         <Instructors />
         {/* Addmission */}
-        <GoodStudentExamples />
-        <Curriculum />
-        <Products />
-        <News />
-        <Footer />
+        <section id="goodstudent">
+          <GoodStudentExamples />
+        </section>
+        <section id="daotao">
+          <Curriculum />
+        </section>
+        <section id="products">
+          <Products />
+        </section>
+        <section id="tintuc">
+          <News />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
       </div>
     </>
   );

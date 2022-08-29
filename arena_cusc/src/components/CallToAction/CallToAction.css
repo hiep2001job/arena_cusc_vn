@@ -1,7 +1,6 @@
 .bg-callToAction {
-  background-size: 130%;
-  background-position-x: 32%;
-  background-position-y: -16px;
+  background-size: cover;
+  background-position-y: 99%;
   background-repeat: no-repeat;
 }
 /* 

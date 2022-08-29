@@ -9,20 +9,19 @@ import './header.css';
 import './navbar.css';
 
 const Header = () => {
-  //Custom scrollpy
+  //Custom scrollpy begin
   var sections = {};
   var isScrolling;
-
   // Scroll to section via link
   const scrollToSection = (link) => {
     link = link.replace('#', '');
     let position;
     try {
-      if(link === 'trangchu'){
-        position=0;
-      }else{
+      if (link === 'trangchu') {
+        position = 0;
+      } else {
         position = document.getElementById(link).offsetTop - 70;
-      }      
+      }
       window.scroll({
         left: 0,
         top: position,
@@ -57,20 +56,26 @@ const Header = () => {
     menuItems.forEach((item, index) => {
       if (`#${link}` === item.link) {
         setActiveMenuItem(index);
-        console.log(`Change to ${index}`);
       }
     });
   };
+  // Custom scrolly end
 
   useEffect(() => {
     var section = document.querySelectorAll('section');
-    Array.prototype.forEach.call(section, function (e) {
-      sections[e.id] = e.offsetTop;
+
+    section.forEach((sec) => {
+      sections[sec.id] = sec.offsetTop;
     });
 
     window.addEventListener('scroll', observeMenu, false);
+    window.addEventListener('hashchange', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
     return () => {
       window.removeEventListener('scroll', observeMenu);
+      window.removeEventListener('hashchange', () => {});
     };
   }, []);
 
@@ -82,10 +87,9 @@ const Header = () => {
   const menuItems = [
     { name: 'Trang chủ', link: '#trangchu' },
     { name: 'Giới thiệu', link: '#gioithieu' },
-    { name: 'Đào tạo', link: '#daotao' },
-    { name: 'Liên thông', link: '#lienthong' },
-    { name: 'Việc làm', link: '#vieclam' },
     { name: 'Ghi danh', link: '#ghidanh' },
+    { name: 'Đào tạo', link: '#daotao' },
+    { name: 'Sản phẩm', link: '#sanpham' },
     { name: 'Tin tức', link: '#tintuc' },
   ];
 
@@ -251,7 +255,13 @@ const Header = () => {
 
           {/* Register button on minimal state */}
           <div className={classNames(!isMobile && minimal ? 'grow flex items-center justify-center' : 'hidden')}>
-            <button className="header-register-btn">Đăng ký</button>
+            <a
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfscLTsI6ZxA7hHuOEgMjUOl5eo9eOXsbzAD6TSRauhdhBwA/viewform"
+              className="header-register-btn"
+            >
+              Đăng ký
+            </a>
           </div>
         </div>
 
