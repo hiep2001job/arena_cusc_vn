@@ -1,9 +1,9 @@
 import './CustomPaging.css';
 
-function CustomPaging() {
+function CustomPaging({ className }) {
   return (
     <>
-      <div className="customPaging"></div>
+      <div className={`customPaging ${className}`}></div>
     </>
   );
 }

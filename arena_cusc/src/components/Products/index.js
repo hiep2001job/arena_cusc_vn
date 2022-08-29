@@ -292,7 +292,7 @@ function Products() {
     infinite: false,
     rows: 2,
     dots: true,
-    customPaging: () => <CustomPaging />,
+    customPaging: () => <CustomPaging className="sm:mt-5 sm:p-10px px-2.5 ml-[-15px] translate-y-2/4" />,
     beforeChange: (current, next) => () => {
       setactiveItem(next);
       console.log(next);
@@ -396,8 +396,6 @@ function Products() {
                 >
                   {(close) => (
                     <ContentModal
-                      closeBtn={true}
-                      close={() => false}
                       content={
                         <>
                           {/* Begin Tab Menu */}
