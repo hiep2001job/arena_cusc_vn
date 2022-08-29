@@ -9,7 +9,6 @@ import new3 from '../../assets/images/Hinh_tin_tuc_su_kien/photo-1-1593539006237
 
 import Title from '../shared/Title';
 import Description from '../shared/Description';
-import Button from '../shared/Button';
 
 //Slider data
 const newsData = [
@@ -67,7 +66,7 @@ const News = () => {
 
   //Get Data
   useEffect(() => {
-    fetch('https://salty-coast-07121.herokuapp.com/')
+    fetch('https://salty-coast-07121.herokuapp.com/news/list')
       .then((res) => res.json())
       .then(
         (result) => {
@@ -88,6 +87,8 @@ const News = () => {
           setIsLoading(true);
         },
       );
+
+    
   }, []);
   return (
     <div className=" w-full overflow-hidden mt-20 relative">
