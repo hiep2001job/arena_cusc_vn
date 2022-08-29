@@ -41,13 +41,13 @@ const Header = () => {
       var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
       let current;
       Object.keys(sections).every((key) => {
-        if (sections[key] <= scrollPosition) {
+        if (sections[key] <= scrollPosition - 90) {
           current = key;
           return true;
         }
         return false;
       });
-
+console.log(scrollPosition);
       changeActiveMenu(current);
     }, 300);
   };
