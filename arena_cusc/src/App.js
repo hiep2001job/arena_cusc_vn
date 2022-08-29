@@ -22,18 +22,42 @@ function App() {
       <div className="max-w-screen-2xl mx-auto min-w-[375px]">
         <Header />
         {/* Wrap components in sections with id for scrollpy  */}
-        <section id="banner"><Banner /></section>
-        <section id="gioithieu"><Slide /></section>
-        <section id="ghidanh"><CallToAction /></section>
-        <section id="whilearena"><WhyArena /></section>
-        <section id="achieverments"><Achieverments /></section>
-        <section id="instructors"><Instructors /></section>
-        {/* Addmission */}
-        <section id="goodstudent"><GoodStudentExamples /></section>
-        <section id="daotao"><Curriculum /></section>
-        <section id="sanpham"><Products /></section>
-        <section id="tintuc"><News /></section>
-        <section id="footer"><Footer /></section>
+        <section id="banner">
+          <Banner />
+        </section>
+        <section id="gioithieu">
+          <Slide />
+        </section>
+        <section id="ghidanh">
+          <CallToAction />
+        </section>
+        <section id="whilearena">
+          <WhyArena />
+        </section>
+        <section id="achieverments">
+          <Achieverments />
+        </section>
+        <section id="instructors">
+          <Instructors />
+        </section>
+        <section id="admissionInfo">
+          <AdmissionInfo />
+        </section>
+        <section id="goodstudent">
+          <GoodStudentExamples />
+        </section>
+        <section id="daotao">
+          <Curriculum />
+        </section>
+        <section id="sanpham">
+          <Products />
+        </section>
+        <section id="tintuc">
+          <News />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
       </div>
     </>
   );
