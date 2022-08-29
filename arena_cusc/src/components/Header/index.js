@@ -55,7 +55,7 @@ const Header = () => {
   const changeActiveMenu = (link) => {
     menuItems.forEach((item, index) => {
       if (`#${link}` === item.link) {
-        setActiveMenuItem(index);        
+        setActiveMenuItem(index);
       }
     });
   };
@@ -75,7 +75,7 @@ const Header = () => {
     });
     return () => {
       window.removeEventListener('scroll', observeMenu);
-      window.removeEventListener('hashchange',()=>{});
+      window.removeEventListener('hashchange', () => {});
     };
   }, []);
 
@@ -86,7 +86,7 @@ const Header = () => {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
   const menuItems = [
     { name: 'Trang chủ', link: '#trangchu' },
-    { name: 'Giới thiệu', link: '#gioithieu' },    
+    { name: 'Giới thiệu', link: '#gioithieu' },
     { name: 'Ghi danh', link: '#ghidanh' },
     { name: 'Đào tạo', link: '#daotao' },
     { name: 'Sản phẩm', link: '#sanpham' },
@@ -255,7 +255,13 @@ const Header = () => {
 
           {/* Register button on minimal state */}
           <div className={classNames(!isMobile && minimal ? 'grow flex items-center justify-center' : 'hidden')}>
-            <button className="header-register-btn">Đăng ký</button>
+            <a
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfscLTsI6ZxA7hHuOEgMjUOl5eo9eOXsbzAD6TSRauhdhBwA/viewform"
+              className="header-register-btn"
+            >
+              Đăng ký
+            </a>
           </div>
         </div>
 

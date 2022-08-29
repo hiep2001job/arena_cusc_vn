@@ -12,7 +12,13 @@ function CallToAction() {
       >
         <div className="absolute w-full mt-32 md:mt-64 mb-32 text-center">
           <Title className="mt-5 bg-white md:bg-transparent">Hành trang kỹ năng tương lai!</Title>
-          <Button className="my-5 md:mt-12">Đăng ký ngay</Button>
+          <Button
+            target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScfscLTsI6ZxA7hHuOEgMjUOl5eo9eOXsbzAD6TSRauhdhBwA/viewform"
+            className="my-5 md:mt-12"
+          >
+            Đăng ký ngay
+          </Button>
         </div>
       </div>
     </>

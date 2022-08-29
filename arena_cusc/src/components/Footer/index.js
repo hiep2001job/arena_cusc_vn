@@ -1,8 +1,7 @@
-// import background from '../../assets/images/Footer_background.png';
-import facebook from '../../assets/images/icon/facebook.png';
-import zalo from '../../assets/images/icon/zalo.png';
-import youtube from '../../assets/images/icon/youtube.jpg';
-import instagram from '../../assets/images/icon/instagram.png';
+import facebook from '../../assets/images/Footer/icon/facebook.png';
+import zalo from '../../assets/images/Footer/icon/zalo.png';
+import youtube from '../../assets/images/Footer/icon/youtube.jpg';
+import instagram from '../../assets/images/Footer/icon/instagram.png';
 
 import './Footer.css';
 import Title from '../shared/Title';
