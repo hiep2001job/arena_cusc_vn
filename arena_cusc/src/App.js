@@ -31,7 +31,7 @@ function App() {
         {/* Addmission */}
         <section id="goodstudent"><GoodStudentExamples /></section>
         <section id="daotao"><Curriculum /></section>
-        <section id="products"><Products /></section>
+        <section id="sanpham"><Products /></section>
         <section id="tintuc"><News /></section>
         <section id="footer"><Footer /></section>
       </div>

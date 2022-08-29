@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-
-
 import aptechLogo from '../../assets/images/Logo/logo_aptech.png';
 import dhctLogo from '../../assets/images/Logo/logo_ctu.png';
 import cuscLogo from '../../assets/images/Logo/logo_cusc.png';
@@ -14,17 +12,16 @@ const Header = () => {
   //Custom scrollpy begin
   var sections = {};
   var isScrolling;
-
   // Scroll to section via link
   const scrollToSection = (link) => {
     link = link.replace('#', '');
     let position;
     try {
-      if(link === 'trangchu'){
-        position=0;
-      }else{
+      if (link === 'trangchu') {
+        position = 0;
+      } else {
         position = document.getElementById(link).offsetTop - 70;
-      }      
+      }
       window.scroll({
         left: 0,
         top: position,
@@ -50,6 +47,7 @@ const Header = () => {
         }
         return false;
       });
+
       changeActiveMenu(current);
     }, 300);
   };
@@ -57,8 +55,7 @@ const Header = () => {
   const changeActiveMenu = (link) => {
     menuItems.forEach((item, index) => {
       if (`#${link}` === item.link) {
-        setActiveMenuItem(index);
-        console.log(`Change to ${index}`);
+        setActiveMenuItem(index);        
       }
     });
   };
@@ -66,14 +63,19 @@ const Header = () => {
 
   useEffect(() => {
     var section = document.querySelectorAll('section');
-    
-    section.forEach(sec => {
+
+    section.forEach((sec) => {
       sections[sec.id] = sec.offsetTop;
     });
-    var isScrolling;
+
     window.addEventListener('scroll', observeMenu, false);
+    window.addEventListener('hashchange', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
     return () => {
       window.removeEventListener('scroll', observeMenu);
+      window.removeEventListener('hashchange',()=>{});
     };
   }, []);
 
@@ -84,11 +86,10 @@ const Header = () => {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
   const menuItems = [
     { name: 'Trang chủ', link: '#trangchu' },
-    { name: 'Giới thiệu', link: '#gioithieu' },
-    { name: 'Đào tạo', link: '#daotao' },
-    { name: 'Liên thông', link: '#lienthong' },
-    { name: 'Việc làm', link: '#vieclam' },
+    { name: 'Giới thiệu', link: '#gioithieu' },    
     { name: 'Ghi danh', link: '#ghidanh' },
+    { name: 'Đào tạo', link: '#daotao' },
+    { name: 'Sản phẩm', link: '#sanpham' },
     { name: 'Tin tức', link: '#tintuc' },
   ];
 
@@ -291,7 +292,14 @@ const Header = () => {
 
             {/* Menu items */}
             {menuItems.map((item, index) => (
-              <li key={index} onClick={() => setActiveMenuItem(index)}>
+              <li
+                key={index}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveMenuItem(index);
+                  scrollToSection(item.link);
+                }}
+              >
                 <a href={`${item.link}`}>
                   <div
                     className={classNames(
