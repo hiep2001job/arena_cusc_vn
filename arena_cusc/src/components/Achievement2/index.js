@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './achievement.css';
 import Title from '../../components/shared/Title';
 import BrandImg from '../../assets/images/No1_Brand.png';
@@ -6,6 +6,7 @@ import Icon_1 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-1.png';
 import Icon_2 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-2.png';
 import Icon_3 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-3.png';
 import Icon_4 from '../../assets/images/icon_Diem_noi_bat_cua_ARENA/icon-4.png';
+import { apispreadsheets, imgFromDriveUrl } from '../shared/ApiSpreadSheets';
 
 const data = [
   { img: Icon_1, value: 25, title: 'năm kinh nghiệm' },
@@ -15,6 +16,26 @@ const data = [
 ];
 
 function Achievements() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [sheet, setSheet] = useState([]);
+  const [productsImage, setProductsImage] = useState([]);
+
+  // FETCH DATA AND SET STATUS
+  useEffect(() => {
+    const sheetName = 'nhung_diem_noi_bat_cua_arena';
+    fetch(`${apispreadsheets}/${sheetName}`)
+      .then((res) => res.json())
+      .then(
+        (results) => {
+          setIsLoaded(true);
+          setSheet(results);
+        },
+        (error) => {
+          console.log('error: ', error);
+          setIsLoaded(false);
+        },
+      );
+  }, []);
   return (
     <>
       <div className="achievement px-5 xl:px-36 mb-20">

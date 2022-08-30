@@ -155,7 +155,7 @@ function Curriculum() {
                           {isLoaded && sheets[0].thoi_gian_dao_tao}
                         </div>
                         {/* Content */}
-                        <div className="content">
+                        <div className="content pb-8 px-2.5">
                           <div className="w-full">
                             <div className="flex sm:max-w-[70%] px-5 text-[#b7b7b7] font-bold mt-4 justify-between mx-auto cursor-pointer">
                               {sheets.map((data, index) => (
