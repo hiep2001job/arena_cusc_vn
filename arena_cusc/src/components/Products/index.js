@@ -110,7 +110,7 @@ function Products() {
             sản phẩm tuyệt vời từ sinh viên!
           </p>
         </div>
-        <div className="products-tab md:mx-[50px] m-0">
+        <div className="products-tab md:mx-[50px] mx-4">
           {/* Header */}
           {/*  */}
           <div className="process-bar relative h-[50px] mt-[65px] w-full ">
