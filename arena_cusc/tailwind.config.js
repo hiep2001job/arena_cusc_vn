@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-color': 'var(--primary-color)',
+        'primary-color': '#ed2f34',
       },
       backgroundPosition: {
         'background-position--35': '-35px',
