@@ -19,7 +19,7 @@ function Achievements() {
     <>
       <div className="achievement px-5 xl:px-36 mb-20">
         <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena multimedia</Title>
-        <div className="achievement-content flex border-b-4 border-b-primary-color items-stretch ">
+        <div className="achievement-content flex border-b-4 border-b-primary-color items-stretch pb-1.5">
           <BrandItem />
           {data.map((val, idx) => (
             <Highlighttem key={`highlight-key-${idx}`} {...val} />

@@ -119,7 +119,7 @@ function Products() {
                 <li
                   key={index}
                   // ${ index === activeGroup ? 'bg-primary-color' : 'bg-white'}
-                  className={`tag-header-item md:w-[20%] w-[25%] relative flex-auto md:m-0 ${
+                  className={`tag-header-item md:w-[20%] w-[33%] relative flex-auto md:m-0 ${
                     index === activeGroup ? 'active' : ''
                   }`}
                   onClick={() => {
@@ -185,13 +185,6 @@ function Products() {
                 ))}
                 {/* end slide image */}
               </Slider>
-              {/* 
-              {setIsLoaded &&
-                productsImage.map((val, index) => (
-                  <>
-                    <h1 key={index}>{val}</h1>
-                  </>
-                ))} */}
             </div>
           </div>
         </div>
