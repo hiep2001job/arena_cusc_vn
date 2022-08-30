@@ -1,10 +1,6 @@
 @media (max-width: 640px) {
-    .admission-left-cirle,
-    .admission-right-cirle {
-        display: none;
-    }
-    .admission-card {
-        margin-left: 1%;
-        margin-right: 1%;
-    }
+  .admission-left-cirle,
+  .admission-right-cirle {
+    display: none;
+  }
 }
