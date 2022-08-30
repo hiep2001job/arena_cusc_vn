@@ -18,8 +18,8 @@ function Achievements() {
   return (
     <>
       <div className="achievement px-5 xl:px-36 mb-20">
-        <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena</Title>
-        <div className="achievement-content flex border-b-4 border-b-primary-color items-stretch ">
+        <Title className="text-center text-primary-color my-8">những điểm nổi bật của arena multimedia</Title>
+        <div className="achievement-content flex border-b-4 border-b-primary-color items-stretch pb-1.5">
           <BrandItem />
           {data.map((val, idx) => (
             <Highlighttem key={`highlight-key-${idx}`} {...val} />
@@ -47,10 +47,10 @@ const Highlighttem = ({ img, value, title }) => {
           <img className="header-image absolute h-32 w-32" src={img} alt="highlight-img" />
         </div>
         <div className="content flex justify-center items-center flex-col w-full h-[73%] border-2 border-[#fff212] rounded-[10px] pt-16 pb-5 px-3.5 shadow-[0_0_10px_0px_#adb5bd]">
-          <div className="number sm:text-3xl  font-bold uppercase text-primary-color">
+          <div className="number text-base md:text-3xl  font-bold uppercase text-primary-color">
             {(value || 0).toLocaleString('de-DE', { minimumFractionDigits: 0 })}
           </div>
-          <div className="titile sm:text-xl font-bold uppercase text-center">{title}</div>
+          <div className="titile text-base md:text-xlfont-bold uppercase text-center">{title}</div>
         </div>
         {/* footer */}
         <div className="footer flex justify-center h-[90px] relative">
